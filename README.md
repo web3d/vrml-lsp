@@ -106,6 +106,9 @@ mvn -B -o test                            # json 由 process-resources 读，跑
 
 ## 里程碑与验收（plan 判据 → 实测）
 
+开发过程的记录（取证顺序、走过的弯路、四次假绿）在 [`DEVELOPMENT.md`](DEVELOPMENT.md)；
+下表只给结论。
+
 | 里程碑 | plan 的判据 | 实测 | 状态 |
 |---|---|---|---|
 | M0 骨架 | 编辑器连上、日志见 initialize | Kate 26 实连接（见下节），`initialize` 握手由内存管道协议测试覆盖 | ✅ |
@@ -217,6 +220,8 @@ plan 首版还打算用 Neovim / Zed / helix 这类纯 stdio 客户端交叉验�
 ```
 vrml-lsp/
   pom.xml                       # release 17、lsp4j 0.24.0、junit 5.11.4、shade 打 fat jar、specgen profile
+  README.md                     # 本文：用法与当前达成度
+  DEVELOPMENT.md                # 开发过程：取证、决策、弯路、四次假绿
   GRAMMAR-MAPPING.md            # .jj 31 条规则 → 我方产生式，逐条依据；语料放宽清单；复核方法；Kate 接入
   parsetest/                    # 263 个 .wrl 的项目内副本 + PROVENANCE.txt
   src/main/java/org/vrml/lsp/   # Launcher、Log + lexer/ parser/ cst/ semantic/ spec/ services/ server/ diagnostics/ text/
