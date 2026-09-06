@@ -253,3 +253,57 @@ jshell --class-path target/vrml-lsp.jar -q /tmp/dump.jsh
 
 新增产生式或放宽时：先在第 1/2 节加行并写明上游行号与依据，再在第 6 节补一个语料或单测点，
 最后才动 `VrmlLexer`/`VrmlParser`。
+
+---
+
+## 8. 在 Kate 里接入
+
+Kate 的 LSP 客户端按**高亮模式名**绑服务器，而它自带 `VRML` 模式：`ksyntaxhighlighter6 -l` 里有这一项，
+且对语料里任一 `.wrl` 的自动探测输出与强制 `-s VRML` 逐字节相同 —— 所以下面那句
+`"highlightingModeRegex": "^VRML$"` 就够，不需要自定义语法文件。
+
+配置落在 `~/.config/kate/lspclient/settings.json`，`servers` 是**以服务器名为键的对象**（不是数组）。
+本项目那一段在 `tools/kate/kate-lsp-settings.json`，里面 `/ABSOLUTE/PATH/TO` 就代表**这个项目目录**；
+在项目根目录里跑下面两句，打印出可直接粘的成品（Kate 不认相对路径，粘之前必须先换成真路径）：
+
+```bash
+mvn -B -o -DskipTests package          # Kate 要的是 jar，`clean test` 之后它已被删掉
+sed "s|/ABSOLUTE/PATH/TO|$PWD|" tools/kate/kate-lsp-settings.json
+```
+
+粘到 设置 → 配置 Kate → LSP 客户端 → 用户服务器设置（User Settings）面板，**只把 `vrml` 这个键并进
+已有的 `servers` 对象里**：整份替换会抹掉你正在用的 `php` 段。不要在 Kate 运行中直接改那个 json，
+Kate 退出时会把它手里的配置写回去，外部改动被抹平 —— 要么走面板，要么先关 Kate。
+
+第一次启动会弹框问是否允许这条命令行，批准结果写进 `katerc` 的 `[lspclient] AllowedServerCommandLines`；
+拒绝过一次就不再弹，得去 LSP 客户端的「Allowed && Blocked Servers」页清掉。
+
+验收用同一条语料、两条路径，结论必须一致：
+
+```bash
+java -jar target/vrml-lsp.jar --check-file parsetest/error_handling/import.wrl
+# Kate 里打开同一个文件，应当亮在 8:8 的 VRL1002
+```
+
+格式化动作的菜单文字随 Kate 版本与翻译变，别照抄：去 设置 → 配置 Kate → 快捷键 里搜 `format`
+与 `LSP`，能找到当前版本那几个动作（顺便给自己绑个键）。
+
+### 两处容易怀疑到对方、其实已核对的契合点
+
+| 协议点 | 我方 | Kate 26 | 依据 |
+|---|---|---|---|
+| 位置 | 声明 UTF-16 列 | 发 UTF-16 | `VrmlLanguageServer.initialize` |
+| 同步 | 声明 Incremental | `[lspclient] IncrementalSync=false`，可以发无 range 的全文事件 | `VrmlDocument.applyEdit` 有 `range == null` 分支，两种都吃 |
+| `languageId` | 完全不读 | 按模式给什么都行 | 主源码里没有 `getLanguageId()` 调用 |
+| 诊断 | 只 push，不声明 pull | 支持 push | 不声明 `diagnosticProvider`，Kate 就不会去拉 |
+| 缩进 | 请求里的 `FormattingOptions.tabSize` 优先于配置 | 取当前文档的缩进 | `FormattingSettings.forRequest` |
+| `vrml.maxColumn` | 只能从配置来，协议对象里没这个字段 | 「Server Configuration」页 → `didChangeConfiguration` | 填 `{"vrml": {"indent": 2, "maxColumn": 100}}`；这条消息在 `LspProtocolIntegrationTest` 里是走真 JSON-RPC 测的 |
+
+`maxColumn` 有没有真到位，看日志而不是猜：收到配置时 server 打一行
+`formatting settings: indent=..., maxColumn=...`。排障统一走文件日志 —— 在 LSP 汉堡菜单里勾
+Debug Server 会改走 `commandDebug`，即 `-Dvrml.lsp.log=/tmp/vrml-lsp.log`。server 的 stderr 在
+Kate 里看不见，而 `Log` 永不写 stdout：stdout 是 JSON-RPC 通道，多写一个字节就变成对端的 Framing error。
+
+改了源码后要重新 `package` 并在 Kate 里 Restart Server —— jar 是启动时读的，不是每次请求读的。
+想绕开编辑器复现同一个故障，用 `tools/lspclient.py`：它按同样的报文序列打 stdio，能给出 Kate 给不了的行号。
+

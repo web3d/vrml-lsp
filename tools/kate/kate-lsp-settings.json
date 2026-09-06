@@ -1,0 +1,20 @@
+{
+    "servers": {
+        "vrml": {
+            "command": [
+                "java",
+                "-jar",
+                "/ABSOLUTE/PATH/TO/target/vrml-lsp.jar"
+            ],
+            "commandDebug": [
+                "java",
+                "-Dvrml.lsp.log=/tmp/vrml-lsp.log",
+                "-jar",
+                "/ABSOLUTE/PATH/TO/target/vrml-lsp.jar"
+            ],
+            "highlightingModeRegex": "^VRML$",
+            "url": "file:///ABSOLUTE/PATH/TO/GRAMMAR-MAPPING.md",
+            "useWorkspace": false
+        }
+    }
+}
