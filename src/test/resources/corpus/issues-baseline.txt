@@ -1,0 +1,28 @@
+# Issues the corpus reports, counted per file and per code.
+# Format: <path relative to parsetest> TAB <VRLcode*count>[;<VRLcode*count>...]  # why
+# Everything not listed here must analyse clean; an entry here is a known limitation,
+# not a TODO. Regenerate with -Dvrml.updateBaseline=true and review the diff.
+error_handling/bad_field_name.wrl	VRL2002*1;VRL3001*1	# The file's own point: 'apperance' is no Shape field (2002), and 3001 offers 'appearance', which is one edit away.
+error_handling/bad_field_name2.wrl	VRL2002*1	# 'diffColor' is no Material field; there is no name two edits away from it to suggest. The repeated 'DEF TX' stays silent, as the language asks: VRML97 has no uniqueness rule for DEF names, and the later definition simply shadows the earlier one for the uses after it.
+error_handling/bad_field_value.wrl	VRL2002*1;VRL2003*1;VRL3001*1	# 'translation 0 0' writes two numbers where an SFVec3f holds three (2003, on the value), and 'apperance' is not a Shape field (2002 with 3001's suggestion).
+error_handling/eventIn_set.wrl	VRL2019*1	# 'set_coordIndex' IndexedFaceSet does have, as an eventIn, which a node body cannot be given a value for: a ROUTE or the browser sends those. 2019 rather than 2002 because the name is real.
+error_handling/import.wrl	VRL1002*1	# X3D IMPORT in a .wrl: the file's own comment says it must be rejected. One error for the statement, the four it used to cascade into are swept as fallout.
+error_handling/non_child_root.wrl	VRL2002*1;VRL2018*1	# The root node of a file is where a grouping node goes and Appearance is not one (2018, not 2001: the type is known, the position is not). Inside it, 'diffColor' is no Material field (2002).
+events/boolean_filter.wrl	VRL1002*2;VRL3005*1	# .wrl-named X3D (PROFILE, inputOnly declarations): out of scope, so VRL3005 says why once. The two are the PROFILE statement and the run of three identical inputOnly declarations, which the Script body sweep collapses into one report.
+nurbs/simple_nurbssurface.wrl	VRL1002*1;VRL3005*1	# .wrl-named X3D (PROFILE, COMPONENT, NURBS extension): out of scope, see VRL3005; the remainder is the PROFILE statement.
+scripts/exposed_field.wrl	VRL1014*1	# exposedField inside Script, illegal in VRML97 per the file's comment; the declaration's own words are swept so no second error appears on the line.
+vrml97/bad_header1.wrl	VRL1017*1	# '# VRML V2.0 utf8': a space after '#' is not a header.
+vrml97/bad_header2.wrl	VRL1017*1	# '#VRML 2.0 utf8': the version's V is missing.
+vrml97/bad_header3.wrl	VRL1017*1	# '#' on line 1 pushes the real header to line 2; the header must be the first line.
+vrml97/bad_header4.wrl	VRL1017*1	# '#VRML V2.0': no encoding field.
+vrml97/bad_header5.wrl	VRL1017*1	# '#VRMLV2.0utf8': the three fields are glued together.
+vrml97/combo1.wrl	VRL2001*2	# TransformGroup is Java3D's class, not a VRML97 node; these five files are Xj3D's own grammar tests and use its name wherever a Transform would do. Reported once per statement, and the unknown type stops anything being said about the translation, rotation and children inside it.
+vrml97/combo2.wrl	VRL2001*2	# TransformGroup, twice, as in combo1.wrl.
+vrml97/combo3.wrl	VRL2001*2	# TransformGroup, twice, as in combo1.wrl.
+vrml97/field1.wrl	VRL2001*1;VRL2018*1	# TransformGroup at the root (2001) and TextureTransform at the root (2018): a texture transform belongs inside an Appearance's texture field, and is not a grouping node. The Viewpoint, TimeSensor, WorldInfo and PositionInterpolator below it are all children nodes, so the root is where they may stand.
+vrml97/field2.wrl	VRL2001*1	# TransformGroup, once, as the type of 'DEF tg'; its two USEs are then about a name that is defined, which is all VRML97 asks of them.
+vrml97/field3.wrl	VRL2001*2	# TransformGroup, twice, as in combo1.wrl.
+vrml97/script2.wrl	VRL2003*3	# 'field SFInt32 blah 0 0 0' in three Script bodies: an SFInt32 holds one number. Xj3D's relaxed parser reads the first and passes over the rest, but a browser stops after one and then finds two values where the next field name belongs. script3.wrl and script5.wrl repeat it with the name 'constant', and script4.wrl nine times.
+vrml97/script3.wrl	VRL2003*3	# 'field SFInt32 constant 0 0 0' three times, as in script2.wrl.
+vrml97/script4.wrl	VRL2003*9	# 'field SFInt32 constant 0 0 0' in nine Script bodies, as in script2.wrl; its 'field SFNode myAppearance Appearance {}' lines are legal, an SFNode field takes any node.
+vrml97/script5.wrl	VRL2003*2	# 'field SFInt32 blah 0 0 0' twice, as in script2.wrl.

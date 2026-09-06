@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>org.vrml</groupId>
+    <artifactId>vrml-lsp</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>VRML97 Language Server</name>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.release>17</maven.compiler.release>
+        <lsp4j.version>0.24.0</lsp4j.version>
+        <junit.version>5.11.4</junit.version>
+        <mainClass>org.vrml.lsp.Launcher</mainClass>
+        <!-- Xj3D's sources and the UOM file are needed only to regenerate the spec table, and can
+             be overridden per machine via .mvn/maven.config or -D flags. Only spec.json ships. -->
+        <xj3d.src.dir>${project.basedir}/../Xj3D/xj3d/src</xj3d.src.dir>
+        <!-- The regression corpus travels with the project, so `mvn test` needs nothing outside this
+             directory; parsetest/PROVENANCE.txt records the upstream and how to verify the copy.
+             Point this at a live checkout with -Dparsetest.dir=../xj3d/parsetest to cross-check. -->
+        <parsetest.dir>${project.basedir}/parsetest</parsetest.dir>
+        <uom.xml>${project.basedir}/.cache/X3dUnifiedObjectModel-4.1.xml</uom.xml>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.eclipse.lsp4j</groupId>
+            <artifactId>org.eclipse.lsp4j</artifactId>
+            <version>${lsp4j.version}</version>
+        </dependency>
+        <!-- Used directly: the spec generator writes vrml97-spec.json and the server reads it back.
+             The version is the one LSP4J 0.24.0 already pulls in, so nothing new lands in the jar. -->
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.14.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>${junit.version}</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <finalName>vrml-lsp</finalName>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.5.2</version>
+                <configuration>
+                    <systemPropertyVariables>
+                        <parsetest.dir>${parsetest.dir}</parsetest.dir>
+                        <xj3d.src.dir>${xj3d.src.dir}</xj3d.src.dir>
+                        <vrml.baseline.file>${project.basedir}/src/test/resources/corpus/issues-baseline.txt</vrml.baseline.file>
+                        <vrml.golden.file>${project.basedir}/src/test/resources/corpus/diagnostics-golden.txt</vrml.golden.file>
+                    </systemPropertyVariables>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.6.0</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals><goal>shade</goal></goals>
+                        <configuration>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>${mainClass}</mainClass>
+                                </transformer>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+                            </transformers>
+                            <filters>
+                                <filter>
+                                    <artifact>*:*</artifact>
+                                    <excludes>
+                                        <exclude>META-INF/*.SF</exclude>
+                                        <exclude>META-INF/*.DSA</exclude>
+                                        <exclude>META-INF/*.RSA</exclude>
+                                        <exclude>module-info.class</exclude>
+                                    </excludes>
+                                </filter>
+                            </filters>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <!--
+            Regenerates src/main/resources/spec/vrml97-spec.json from the sibling checkouts:
+
+                mvn -Pspecgen process-test-classes
+
+            Off by default, because an ordinary build must work without Xj3D or the UOM file - the
+            generated json is checked in, and only it goes into the jar. The corpus the generator
+            reads is the copy under parsetest/, so this profile needs the sibling checkout only for
+            the node classes and the profiles list.
+            The generator is compiled as a *test* source so that none of it can leak into the shipped
+            server. The json is read by `process-resources`, which ran before the generator: run a
+            plain `mvn test` afterwards to pick the new table up, or `mvn -Pspecgen clean test`.
+        -->
+        <profile>
+            <id>specgen</id>
+            <properties>
+                <spec.json>${project.basedir}/src/main/resources/spec/vrml97-spec.json</spec.json>
+                <spec.report>${project.build.directory}/specgen/vrml97-vs-uom-report.txt</spec.report>
+                <xj3d.nodes.dir>${xj3d.src.dir}/java/org/web3d/vrml/renderer/common/nodes</xj3d.nodes.dir>
+            </properties>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>build-helper-maven-plugin</artifactId>
+                        <version>3.6.0</version>
+                        <executions>
+                            <execution>
+                                <id>specgen-sources</id>
+                                <phase>generate-test-sources</phase>
+                                <goals><goal>add-test-source</goal></goals>
+                                <configuration>
+                                    <sources>
+                                        <source>${project.basedir}/src/specgen/java</source>
+                                    </sources>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>exec-maven-plugin</artifactId>
+                        <version>3.5.0</version>
+                        <executions>
+                            <execution>
+                                <id>generate-spec</id>
+                                <phase>process-test-classes</phase>
+                                <goals><goal>java</goal></goals>
+                                <configuration>
+                                    <mainClass>org.vrml.spec.SpecGenMain</mainClass>
+                                    <classpathScope>test</classpathScope>
+                                    <arguments>
+                                        <argument>--profiles</argument>
+                                        <argument>${xj3d.src.dir}/config/2.0/profiles.xml</argument>
+                                        <argument>--nodes</argument>
+                                        <argument>${xj3d.nodes.dir}</argument>
+                                        <argument>--uom</argument>
+                                        <argument>${uom.xml}</argument>
+                                        <argument>--parsetest</argument>
+                                        <argument>${parsetest.dir}</argument>
+                                        <argument>--out</argument>
+                                        <argument>${spec.json}</argument>
+                                        <argument>--report</argument>
+                                        <argument>${spec.report}</argument>
+                                    </arguments>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+</project>

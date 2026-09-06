@@ -1,0 +1,24 @@
+# Everything the build derives, including the shaded jar clients run.
+target/
+
+# Third-party input to the spec generator (the X3D Unified Object Model) plus the scratch it
+# writes there. Neither is ours to version, and the table it produces is: src/main/resources/spec.
+# Regenerating is `mvn -Pspecgen process-test-classes`, which wants this file back in place.
+.cache/
+
+# Per-machine build flags: this one points -Dmaven.repo.local into whoever's checkout. Anything
+# else in .mvn/ (a wrapper, say) is meant to be shared and so is not ignored.
+.mvn/maven.config
+
+# The corpus is deliberately NOT ignored: `mvn test` is supposed to need nothing but this
+# directory. parsetest/PROVENANCE.txt says where the scenes came from.
+
+# IDEs.
+.idea/
+*.iml
+.vscode/
+.settings/
+.classpath
+.project
+nbproject/
+nb-configuration.xml

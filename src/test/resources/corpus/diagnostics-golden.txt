@@ -1,0 +1,19 @@
+# Expected diagnostics for the corpus files that are meant to fail.
+# Format: <path relative to parsetest> TAB <VRLcode@startLine:startChar-endLine:endChar> [ ; ...] or "-" for none.
+# Lines and characters are 0-based UTF-16 units, exactly what publishDiagnostics sends.
+# Regenerate with -Dvrml.updateGolden=true; an entry is a claim about where the mistake is, so review the diff.
+vrml97/bad_header1.wrl	VRL1017@0:0-0:16	# '# VRML V2.0 utf8': a space after '#' means this is a comment, not a header; the range is the whole line, which is what has to change.
+vrml97/bad_header2.wrl	VRL1017@0:0-0:14	# '#VRML 2.0 utf8': the version's V is gone, so 'V2.0' is not there to find.
+vrml97/bad_header3.wrl	VRL1017@0:0-0:1	# '#' alone on line 1 pushes the real header to line 2. The complaint is about line 1, because that is the line to fix.
+vrml97/bad_header4.wrl	VRL1017@0:0-0:10	# '#VRML V2.0': no encoding field, so the third word is missing where the range ends.
+vrml97/bad_header5.wrl	VRL1017@0:0-0:13	# '#VRMLV2.0utf8': the three fields are glued together; nothing matches after '#VRML'.
+error_handling/import.wrl	VRL1002@7:7-7:7	# IMPORT is X3D-only. Rule 12 reads 'IMPORT' as a node type and asks for its '{', so the marker sits on the token that should have been '{'; the rest of the line is fallout and stays unreported.
+error_handling/bad_field_name.wrl	VRL2002@8:3-8:12 ; VRL3001@8:3-8:12	# 'apperance' is no Shape field, marked on the name itself, and 3001 underlines the same range with the one-edit-away suggestion 'appearance'. Nothing structural is wrong here, which is what makes it a semantic case.
+error_handling/bad_field_name2.wrl	VRL2002@10:10-10:19	# 'diffColor' is no Material field, and no Material field is two edits away from it, so nothing is suggested. The repeated 'DEF TX' stays silent: VRML97 has no uniqueness rule for DEF names.
+error_handling/bad_field_value.wrl	VRL2003@3:14-3:17 ; VRL2002@7:6-7:15 ; VRL3001@7:6-7:15	# The value marker covers the two numbers on the translation line, where an SFVec3f holds three; the field name line gets 2002 with 3001's 'appearance' beside it. Two mistakes, two places to look.
+error_handling/double_def.wrl	-	# Nothing is wrong: the file's own comment says DEF names must be unique in X3D, not in VRML97. This line is the guard that keeps VRL2005 off it.
+error_handling/eventIn_set.wrl	VRL2019@4:4-4:18	# 'set_coordIndex' is a real name - the eventIn IndexedFaceSet derives from its exposed coordIndex - so 2019 marks it instead of calling it unknown: a node body cannot set one, only a ROUTE or the browser can.
+error_handling/non_child_root.wrl	VRL2018@4:0-4:10 ; VRL2002@6:4-6:13	# The marker sits on the node type with 2018: Appearance is known, it is the position that is wrong, since a file root takes a grouping node. Saying 2001 there would misread the name. 'diffColor' inside it is no Material field.
+events/boolean_filter.wrl	VRL3005@0:0-0:4 ; VRL1002@2:8-2:8 ; VRL1002@21:20-21:20	# X3D wearing a .wrl name, which 3005 says on the '#X3D' itself. PROFILE is no VRML97 statement, so Rule 12 fails on its argument; the third sits on 'printTrue', the last token of the first 'inputOnly' line - VRML97 spells that eventIn, and the body sweep keeps the other two identical declarations from each costing a marker.
+nurbs/simple_nurbssurface.wrl	VRL3005@0:0-0:4 ; VRL1002@2:8-2:8	# The same X3D header, and 'PROFILE Interactive': the marker sits on 'Interactive' because that is where the node body's '{' should have been. COMPONENT and the NURBS nodes are swept, not reported word by word.
+scripts/exposed_field.wrl	VRL1014@7:2-7:14	# Range covers the 'exposedField' keyword itself, the one word that is wrong; its type, name and value are swept so the line reports once.

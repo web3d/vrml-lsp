@@ -1,0 +1,5396 @@
+{
+  "version": "1",
+  "sources": {
+    "nodes": "Xj3D config/2.0/profiles.xml",
+    "fields": "Xj3D vrml/renderer/common/nodes/**/Base*.java",
+    "metadata": "X3dUnifiedObjectModel-4.1.xml",
+    "usage": "xj3d/parsetest/**/*.wrl"
+  },
+  "sfTypes": [
+    "SFBool",
+    "SFColor",
+    "SFFloat",
+    "SFImage",
+    "SFInt32",
+    "SFNode",
+    "SFRotation",
+    "SFString",
+    "SFTime",
+    "SFVec2f",
+    "SFVec3f",
+    "MFBool",
+    "MFColor",
+    "MFFloat",
+    "MFInt32",
+    "MFNode",
+    "MFRotation",
+    "MFString",
+    "MFTime",
+    "MFVec2f",
+    "MFVec3f"
+  ],
+  "valueTemplates": {
+    "SFBool": {
+      "width": 0,
+      "snippet": "${1|true,false|}"
+    },
+    "SFColor": {
+      "width": 3,
+      "snippet": "${1:0.0} ${2:0.0} ${3:0.0}"
+    },
+    "SFFloat": {
+      "width": 1,
+      "snippet": "${1:0.0}"
+    },
+    "SFImage": {
+      "width": 0,
+      "snippet": "${1:1} ${2:1} ${3:3} 0x${4:000000}"
+    },
+    "SFInt32": {
+      "width": 1,
+      "snippet": "${1:0}"
+    },
+    "SFNode": {
+      "width": 0,
+      "snippet": "${1:NULL}"
+    },
+    "SFRotation": {
+      "width": 4,
+      "snippet": "${1:0.0} ${2:0.0} ${3:1.0} ${4:0.0}"
+    },
+    "SFString": {
+      "width": 0,
+      "snippet": "\"$1\""
+    },
+    "SFTime": {
+      "width": 1,
+      "snippet": "${1:0.0}"
+    },
+    "SFVec2f": {
+      "width": 2,
+      "snippet": "${1:0.0} ${2:0.0}"
+    },
+    "SFVec3f": {
+      "width": 3,
+      "snippet": "${1:0.0} ${2:0.0} ${3:0.0}"
+    },
+    "MFBool": {
+      "width": 0,
+      "snippet": "${1|true,false|},\n$0"
+    },
+    "MFColor": {
+      "width": 3,
+      "snippet": "${1:0.0} ${2:0.0} ${3:0.0},\n$0"
+    },
+    "MFFloat": {
+      "width": 1,
+      "snippet": "${1:0.0},\n$0"
+    },
+    "MFInt32": {
+      "width": 1,
+      "snippet": "${1:0},\n$0"
+    },
+    "MFNode": {
+      "width": 0,
+      "snippet": "${1:NULL},\n$0"
+    },
+    "MFRotation": {
+      "width": 4,
+      "snippet": "${1:0.0} ${2:0.0} ${3:1.0} ${4:0.0},\n$0"
+    },
+    "MFString": {
+      "width": 0,
+      "snippet": "\"$1\",\n$0"
+    },
+    "MFTime": {
+      "width": 1,
+      "snippet": "${1:0.0},\n$0"
+    },
+    "MFVec2f": {
+      "width": 2,
+      "snippet": "${1:0.0} ${2:0.0},\n$0"
+    },
+    "MFVec3f": {
+      "width": 3,
+      "snippet": "${1:0.0} ${2:0.0} ${3:0.0},\n$0"
+    }
+  },
+  "nodes": [
+    {
+      "name": "Anchor",
+      "component": "Networking",
+      "level": 1,
+      "summary": "Anchor is a Grouping node that can contain most nodes.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/networking.html#Anchor",
+      "fields": [
+        {
+          "name": "children",
+          "type": "MFNode",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Grouping nodes contain an ordered list of children nodes.",
+          "childNodes": [
+            "Anchor",
+            "AudioClip",
+            "Background",
+            "Billboard",
+            "Box",
+            "Collision",
+            "ColorInterpolator",
+            "Cone",
+            "CoordinateInterpolator",
+            "Cylinder",
+            "CylinderSensor",
+            "DirectionalLight",
+            "ElevationGrid",
+            "Extrusion",
+            "Fog",
+            "Group",
+            "IndexedFaceSet",
+            "IndexedLineSet",
+            "Inline",
+            "LOD",
+            "LineSet",
+            "MovieTexture",
+            "NavigationInfo",
+            "NormalInterpolator",
+            "OrientationInterpolator",
+            "PlaneSensor",
+            "PointLight",
+            "PointSet",
+            "PositionInterpolator",
+            "ProximitySensor",
+            "ScalarInterpolator",
+            "Script",
+            "Shape",
+            "Sound",
+            "Sphere",
+            "SphereSensor",
+            "SpotLight",
+            "Switch",
+            "Text",
+            "TimeSensor",
+            "TouchSensor",
+            "Transform",
+            "Viewpoint",
+            "VisibilitySensor",
+            "WorldInfo"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "addChildren",
+          "type": "MFNode",
+          "access": "eventIn",
+          "default": "",
+          "doc": "",
+          "childNodes": [
+            "Anchor",
+            "AudioClip",
+            "Background",
+            "Billboard",
+            "Box",
+            "Collision",
+            "ColorInterpolator",
+            "Cone",
+            "CoordinateInterpolator",
+            "Cylinder",
+            "CylinderSensor",
+            "DirectionalLight",
+            "ElevationGrid",
+            "Extrusion",
+            "Fog",
+            "Group",
+            "IndexedFaceSet",
+            "IndexedLineSet",
+            "Inline",
+            "LOD",
+            "LineSet",
+            "MovieTexture",
+            "NavigationInfo",
+            "NormalInterpolator",
+            "OrientationInterpolator",
+            "PlaneSensor",
+            "PointLight",
+            "PointSet",
+            "PositionInterpolator",
+            "ProximitySensor",
+            "ScalarInterpolator",
+            "Script",
+            "Shape",
+            "Sound",
+            "Sphere",
+            "SphereSensor",
+            "SpotLight",
+            "Switch",
+            "Text",
+            "TimeSensor",
+            "TouchSensor",
+            "Transform",
+            "Viewpoint",
+            "VisibilitySensor",
+            "WorldInfo"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "removeChildren",
+          "type": "MFNode",
+          "access": "eventIn",
+          "default": "",
+          "doc": "",
+          "childNodes": [
+            "Anchor",
+            "AudioClip",
+            "Background",
+            "Billboard",
+            "Box",
+            "Collision",
+            "ColorInterpolator",
+            "Cone",
+            "CoordinateInterpolator",
+            "Cylinder",
+            "CylinderSensor",
+            "DirectionalLight",
+            "ElevationGrid",
+            "Extrusion",
+            "Fog",
+            "Group",
+            "IndexedFaceSet",
+            "IndexedLineSet",
+            "Inline",
+            "LOD",
+            "LineSet",
+            "MovieTexture",
+            "NavigationInfo",
+            "NormalInterpolator",
+            "OrientationInterpolator",
+            "PlaneSensor",
+            "PointLight",
+            "PointSet",
+            "PositionInterpolator",
+            "ProximitySensor",
+            "ScalarInterpolator",
+            "Script",
+            "Shape",
+            "Sound",
+            "Sphere",
+            "SphereSensor",
+            "SpotLight",
+            "Switch",
+            "Text",
+            "TimeSensor",
+            "TouchSensor",
+            "Transform",
+            "Viewpoint",
+            "VisibilitySensor",
+            "WorldInfo"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "autoRefresh",
+          "type": "SFTime",
+          "access": "field",
+          "default": "0",
+          "doc": "The [autoRefresh field has no effect, Anchor operation is only triggered by user selection.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "autoRefreshTimeLimit",
+          "type": "SFTime",
+          "access": "field",
+          "default": "3600",
+          "doc": "The [autoRefreshTimeLimit field has no effect, Anchor operation is only triggered by user selection.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "load",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "The load field has no effect, Anchor operation is only triggered by user selection.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "visible",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "Whether or not renderable content within this node is visually displayed.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "bboxCenter",
+          "type": "SFVec3f",
+          "access": "field",
+          "default": "0 0 0",
+          "doc": "Bounding box center accompanies bboxSize and provides an optional hint for bounding box position offset from origin of local coordinate system.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "bboxSize",
+          "type": "SFVec3f",
+          "access": "field",
+          "default": "-1 -1 -1",
+          "doc": "Bounding box size is usually omitted, and can easily be calculated automatically by an X3D player at scene-loading time with minimal computational cost.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "bboxDisplay",
+          "type": "SFBool",
+          "access": "field",
+          "default": "false",
+          "doc": "Whether to display bounding box for associated geometry, aligned with world coordinates.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "description",
+          "type": "SFString",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Author-provided prose that describes intended purpose of the url asset.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "parameter",
+          "type": "MFString",
+          "access": "exposedField",
+          "default": "",
+          "doc": "If provided, parameter tells the X3D player where to to redirect the loaded url.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "url",
+          "type": "MFString",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Address of replacement world, or #ViewpointDEFName within the current scene, or alternate Web resource, activated by the user selecting Shape geometry within the Anchor children nodes.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "Appearance",
+      "component": "Shape",
+      "level": 1,
+      "summary": "Appearance specifies the visual properties of geometry by containing the Material, ImageTexture/MovieTexture/PixelTexture, FillProperties, LineProperties, programmable shader nodes (ComposedShader, PackagedShader, ProgramShader) and TextureTransform nodes.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/shape.html#Appearance",
+      "fields": [
+        {
+          "name": "material",
+          "type": "SFNode",
+          "access": "exposedField",
+          "default": "NULL",
+          "doc": "Optional single contained Material, PhysicalMaterial, TwoSidedMaterial (deprecated), or UnlitMaterial node that can specify visual attributes for lighting response (color types, transparency, etc.",
+          "childNodes": [
+            "Material"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "texture",
+          "type": "SFNode",
+          "access": "exposedField",
+          "default": "NULL",
+          "doc": "Optional single contained texture node (ImageTexture, MovieTexture, PixelTexture, MultiTexture) that maps image(s) to surface geometry.",
+          "childNodes": [
+            "ImageTexture",
+            "MovieTexture",
+            "PixelTexture"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "textureTransform",
+          "type": "SFNode",
+          "access": "exposedField",
+          "default": "NULL",
+          "doc": "Optional single contained TextureTransform node that defines 2D transformation applied to texture coordinates.",
+          "childNodes": [
+            "TextureTransform"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "lineProperties",
+          "type": "SFNode",
+          "access": "exposedField",
+          "default": "NULL",
+          "doc": "Optional single contained LineProperties node that can specify additional visual attributes applied to corresponding line geometry.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "pointProperties",
+          "type": "SFNode",
+          "access": "exposedField",
+          "default": "NULL",
+          "doc": "Optional single contained PointProperties node that can specify additional visual attributes applied to corresponding point geometry.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "fillProperties",
+          "type": "SFNode",
+          "access": "exposedField",
+          "default": "NULL",
+          "doc": "Optional single contained FillProperties node that can specify additional visual attributes applied to polygonal areas of corresponding geometry, on top of whatever other appearance is already defined.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "textureProperties",
+          "type": "SFNode",
+          "access": "exposedField",
+          "default": "",
+          "doc": "",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "acousticProperties",
+          "type": "SFNode",
+          "access": "exposedField",
+          "default": "NULL",
+          "doc": "Optional single contained acousticProperties node that can specify additional acoustic attributes applied to associated surface geometry.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "alphaCutoff",
+          "type": "SFFloat",
+          "access": "exposedField",
+          "default": "0.5",
+          "doc": "Threshold value used for pixel rendering either transparent or opaque, used when alphaMode=\"MASK\".",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "alphaMode",
+          "type": "SFString",
+          "access": "exposedField",
+          "default": "AUTO",
+          "doc": "Provides options for control of alpha transparency handling for textures.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "backMaterial",
+          "type": "SFNode",
+          "access": "exposedField",
+          "default": "NULL",
+          "doc": "Optional single contained Material, PhysicalMaterial or UnlitMaterial node that can specify visual attributes for lighting response (color types, transparency, etc.",
+          "childNodes": [
+            "Material"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "shaders",
+          "type": "SFNode",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Zero or more contained programmable shader nodes (ComposedShader, PackagedShader, ProgramShader) that specify, in order of preference, author-programmed rendering characteristics.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "AudioClip",
+      "component": "Sound",
+      "level": 1,
+      "summary": "AudioClip provides audio data used by parent Sound nodes.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/sound.html#AudioClip",
+      "fields": [
+        {
+          "name": "description",
+          "type": "SFString",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Author-provided prose that describes intended purpose of the url asset.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "loop",
+          "type": "SFBool",
+          "access": "exposedField",
+          "default": "false",
+          "doc": "Repeat indefinitely when loop=true, repeat only once when loop=false.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "pitch",
+          "type": "SFFloat",
+          "access": "exposedField",
+          "default": "1.0",
+          "doc": "Multiplier for the rate at which sampled sound is played.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "startTime",
+          "type": "SFTime",
+          "access": "exposedField",
+          "default": "0",
+          "doc": "Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "pauseTime",
+          "type": "SFTime",
+          "access": "exposedField",
+          "default": "0",
+          "doc": "When time now >= pauseTime, isPaused becomes true and AudioClip becomes paused.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "resumeTime",
+          "type": "SFTime",
+          "access": "exposedField",
+          "default": "0",
+          "doc": "When resumeTime becomes <= time now, isPaused becomes false and AudioClip becomes active.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "elapsedTime",
+          "type": "SFTime",
+          "access": "eventOut",
+          "default": "",
+          "doc": "Current elapsed time since AudioClip activated/running, cumulative in seconds, and not counting any paused time.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "stopTime",
+          "type": "SFTime",
+          "access": "exposedField",
+          "default": "0",
+          "doc": "Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "url",
+          "type": "MFString",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Location and filename of sound file or stream.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "isActive",
+          "type": "SFBool",
+          "access": "eventOut",
+          "default": "",
+          "doc": "isActive true/false events are sent when playback starts/stops.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "duration_changed",
+          "type": "SFTime",
+          "access": "eventOut",
+          "default": "",
+          "doc": "or -1.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "isPaused",
+          "type": "SFBool",
+          "access": "eventOut",
+          "default": "",
+          "doc": "isPaused true/false events are sent when AudioClip is paused/resumed.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "Background",
+      "component": "EnvironmentalEffects",
+      "level": 1,
+      "summary": "Background simulates ground and sky, using vertical arrays of wraparound color values.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/environmentalEffects.html#Background",
+      "fields": [
+        {
+          "name": "set_bind",
+          "type": "SFBool",
+          "access": "eventIn",
+          "default": "",
+          "doc": "Input event set_bind=true makes this node active, input event set_bind=false makes this node inactive.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "isBound",
+          "type": "SFBool",
+          "access": "eventOut",
+          "default": "",
+          "doc": "event true sent when node becomes active, event false sent when unbound by another node.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "bindTime",
+          "type": "SFTime",
+          "access": "eventOut",
+          "default": "",
+          "doc": "event sent when node becomes active/inactive.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "groundAngle",
+          "type": "MFFloat",
+          "access": "exposedField",
+          "default": "",
+          "doc": "The angle array values increase from 0.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "groundColor",
+          "type": "MFColor",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Color of the ground at the various angles on the ground partial sphere.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "skyAngle",
+          "type": "MFFloat",
+          "access": "exposedField",
+          "default": "",
+          "doc": "The angle array values increase from 0.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "skyColor",
+          "type": "MFColor",
+          "access": "exposedField",
+          "default": "0 0 0",
+          "doc": "Color of the sky at various angles on the sky sphere.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "backUrl",
+          "type": "MFString",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Image background panorama between ground/sky backdrop and scene's geometry.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "frontUrl",
+          "type": "MFString",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Image background panorama between ground/sky backdrop and scene's geometry.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "leftUrl",
+          "type": "MFString",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Image background panorama between ground/sky backdrop and scene's geometry.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "rightUrl",
+          "type": "MFString",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Image background panorama between ground/sky backdrop and scene's geometry.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "topUrl",
+          "type": "MFString",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Image background panorama between ground/sky backdrop and scene's geometry.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "bottomUrl",
+          "type": "MFString",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Image background panorama between ground/sky backdrop and scene's geometry.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "transparency",
+          "type": "SFFloat",
+          "access": "exposedField",
+          "default": "0",
+          "doc": "how \"clear\" the background is, allows underlying page to show through: 1.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "Billboard",
+      "component": "Navigation",
+      "level": 1,
+      "summary": "Billboard is a Grouping node that can contain most nodes.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/navigation.html#Billboard",
+      "fields": [
+        {
+          "name": "children",
+          "type": "MFNode",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Grouping nodes contain an ordered list of children nodes.",
+          "childNodes": [
+            "Anchor",
+            "AudioClip",
+            "Background",
+            "Billboard",
+            "Box",
+            "Collision",
+            "ColorInterpolator",
+            "Cone",
+            "CoordinateInterpolator",
+            "Cylinder",
+            "CylinderSensor",
+            "DirectionalLight",
+            "ElevationGrid",
+            "Extrusion",
+            "Fog",
+            "Group",
+            "IndexedFaceSet",
+            "IndexedLineSet",
+            "Inline",
+            "LOD",
+            "LineSet",
+            "MovieTexture",
+            "NavigationInfo",
+            "NormalInterpolator",
+            "OrientationInterpolator",
+            "PlaneSensor",
+            "PointLight",
+            "PointSet",
+            "PositionInterpolator",
+            "ProximitySensor",
+            "ScalarInterpolator",
+            "Script",
+            "Shape",
+            "Sound",
+            "Sphere",
+            "SphereSensor",
+            "SpotLight",
+            "Switch",
+            "Text",
+            "TimeSensor",
+            "TouchSensor",
+            "Transform",
+            "Viewpoint",
+            "VisibilitySensor",
+            "WorldInfo"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "addChildren",
+          "type": "MFNode",
+          "access": "eventIn",
+          "default": "",
+          "doc": "",
+          "childNodes": [
+            "Anchor",
+            "AudioClip",
+            "Background",
+            "Billboard",
+            "Box",
+            "Collision",
+            "ColorInterpolator",
+            "Cone",
+            "CoordinateInterpolator",
+            "Cylinder",
+            "CylinderSensor",
+            "DirectionalLight",
+            "ElevationGrid",
+            "Extrusion",
+            "Fog",
+            "Group",
+            "IndexedFaceSet",
+            "IndexedLineSet",
+            "Inline",
+            "LOD",
+            "LineSet",
+            "MovieTexture",
+            "NavigationInfo",
+            "NormalInterpolator",
+            "OrientationInterpolator",
+            "PlaneSensor",
+            "PointLight",
+            "PointSet",
+            "PositionInterpolator",
+            "ProximitySensor",
+            "ScalarInterpolator",
+            "Script",
+            "Shape",
+            "Sound",
+            "Sphere",
+            "SphereSensor",
+            "SpotLight",
+            "Switch",
+            "Text",
+            "TimeSensor",
+            "TouchSensor",
+            "Transform",
+            "Viewpoint",
+            "VisibilitySensor",
+            "WorldInfo"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "removeChildren",
+          "type": "MFNode",
+          "access": "eventIn",
+          "default": "",
+          "doc": "",
+          "childNodes": [
+            "Anchor",
+            "AudioClip",
+            "Background",
+            "Billboard",
+            "Box",
+            "Collision",
+            "ColorInterpolator",
+            "Cone",
+            "CoordinateInterpolator",
+            "Cylinder",
+            "CylinderSensor",
+            "DirectionalLight",
+            "ElevationGrid",
+            "Extrusion",
+            "Fog",
+            "Group",
+            "IndexedFaceSet",
+            "IndexedLineSet",
+            "Inline",
+            "LOD",
+            "LineSet",
+            "MovieTexture",
+            "NavigationInfo",
+            "NormalInterpolator",
+            "OrientationInterpolator",
+            "PlaneSensor",
+            "PointLight",
+            "PointSet",
+            "PositionInterpolator",
+            "ProximitySensor",
+            "ScalarInterpolator",
+            "Script",
+            "Shape",
+            "Sound",
+            "Sphere",
+            "SphereSensor",
+            "SpotLight",
+            "Switch",
+            "Text",
+            "TimeSensor",
+            "TouchSensor",
+            "Transform",
+            "Viewpoint",
+            "VisibilitySensor",
+            "WorldInfo"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "bboxCenter",
+          "type": "SFVec3f",
+          "access": "field",
+          "default": "0 0 0",
+          "doc": "Bounding box center accompanies bboxSize and provides an optional hint for bounding box position offset from origin of local coordinate system.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "bboxSize",
+          "type": "SFVec3f",
+          "access": "field",
+          "default": "-1 -1 -1",
+          "doc": "Bounding box size is usually omitted, and can easily be calculated automatically by an X3D player at scene-loading time with minimal computational cost.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "bboxDisplay",
+          "type": "SFBool",
+          "access": "field",
+          "default": "false",
+          "doc": "Whether to display bounding box for associated geometry, aligned with world coordinates.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "axisOfRotation",
+          "type": "SFVec3f",
+          "access": "exposedField",
+          "default": "0 1 0",
+          "doc": "axisOfRotation direction is relative to local coordinate system.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "Box",
+      "component": "Geometry",
+      "level": 1,
+      "summary": "Box is a geometry node specifying a rectangular cuboid.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/geometry3D.html#Box",
+      "fields": [
+        {
+          "name": "size",
+          "type": "SFVec3f",
+          "access": "field",
+          "default": "2 2 2",
+          "doc": "size x y z in meters.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "solid",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off).",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "Collision",
+      "component": "Navigation",
+      "level": 1,
+      "summary": "Collision detects camera-to-object contact using current view and NavigationInfo avatarSize.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/navigation.html#Collision",
+      "fields": [
+        {
+          "name": "children",
+          "type": "MFNode",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Grouping nodes contain an ordered list of children nodes.",
+          "childNodes": [
+            "Anchor",
+            "AudioClip",
+            "Background",
+            "Billboard",
+            "Box",
+            "Collision",
+            "ColorInterpolator",
+            "Cone",
+            "CoordinateInterpolator",
+            "Cylinder",
+            "CylinderSensor",
+            "DirectionalLight",
+            "ElevationGrid",
+            "Extrusion",
+            "Fog",
+            "Group",
+            "IndexedFaceSet",
+            "IndexedLineSet",
+            "Inline",
+            "LOD",
+            "LineSet",
+            "MovieTexture",
+            "NavigationInfo",
+            "NormalInterpolator",
+            "OrientationInterpolator",
+            "PlaneSensor",
+            "PointLight",
+            "PointSet",
+            "PositionInterpolator",
+            "ProximitySensor",
+            "ScalarInterpolator",
+            "Script",
+            "Shape",
+            "Sound",
+            "Sphere",
+            "SphereSensor",
+            "SpotLight",
+            "Switch",
+            "Text",
+            "TimeSensor",
+            "TouchSensor",
+            "Transform",
+            "Viewpoint",
+            "VisibilitySensor",
+            "WorldInfo"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "addChildren",
+          "type": "MFNode",
+          "access": "eventIn",
+          "default": "",
+          "doc": "",
+          "childNodes": [
+            "Anchor",
+            "AudioClip",
+            "Background",
+            "Billboard",
+            "Box",
+            "Collision",
+            "ColorInterpolator",
+            "Cone",
+            "CoordinateInterpolator",
+            "Cylinder",
+            "CylinderSensor",
+            "DirectionalLight",
+            "ElevationGrid",
+            "Extrusion",
+            "Fog",
+            "Group",
+            "IndexedFaceSet",
+            "IndexedLineSet",
+            "Inline",
+            "LOD",
+            "LineSet",
+            "MovieTexture",
+            "NavigationInfo",
+            "NormalInterpolator",
+            "OrientationInterpolator",
+            "PlaneSensor",
+            "PointLight",
+            "PointSet",
+            "PositionInterpolator",
+            "ProximitySensor",
+            "ScalarInterpolator",
+            "Script",
+            "Shape",
+            "Sound",
+            "Sphere",
+            "SphereSensor",
+            "SpotLight",
+            "Switch",
+            "Text",
+            "TimeSensor",
+            "TouchSensor",
+            "Transform",
+            "Viewpoint",
+            "VisibilitySensor",
+            "WorldInfo"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "removeChildren",
+          "type": "MFNode",
+          "access": "eventIn",
+          "default": "",
+          "doc": "",
+          "childNodes": [
+            "Anchor",
+            "AudioClip",
+            "Background",
+            "Billboard",
+            "Box",
+            "Collision",
+            "ColorInterpolator",
+            "Cone",
+            "CoordinateInterpolator",
+            "Cylinder",
+            "CylinderSensor",
+            "DirectionalLight",
+            "ElevationGrid",
+            "Extrusion",
+            "Fog",
+            "Group",
+            "IndexedFaceSet",
+            "IndexedLineSet",
+            "Inline",
+            "LOD",
+            "LineSet",
+            "MovieTexture",
+            "NavigationInfo",
+            "NormalInterpolator",
+            "OrientationInterpolator",
+            "PlaneSensor",
+            "PointLight",
+            "PointSet",
+            "PositionInterpolator",
+            "ProximitySensor",
+            "ScalarInterpolator",
+            "Script",
+            "Shape",
+            "Sound",
+            "Sphere",
+            "SphereSensor",
+            "SpotLight",
+            "Switch",
+            "Text",
+            "TimeSensor",
+            "TouchSensor",
+            "Transform",
+            "Viewpoint",
+            "VisibilitySensor",
+            "WorldInfo"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "bboxCenter",
+          "type": "SFVec3f",
+          "access": "field",
+          "default": "0 0 0",
+          "doc": "Bounding box center accompanies bboxSize and provides an optional hint for bounding box position offset from origin of local coordinate system.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "bboxSize",
+          "type": "SFVec3f",
+          "access": "field",
+          "default": "-1 -1 -1",
+          "doc": "Bounding box size is usually omitted, and can easily be calculated automatically by an X3D player at scene-loading time with minimal computational cost.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "bboxDisplay",
+          "type": "SFBool",
+          "access": "field",
+          "default": "false",
+          "doc": "Whether to display bounding box for associated geometry, aligned with world coordinates.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "collide",
+          "type": "SFBool",
+          "access": "exposedField",
+          "default": "",
+          "doc": "",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "proxy",
+          "type": "SFNode",
+          "access": "field",
+          "default": "NULL",
+          "doc": "The proxy node is used as a substitute for Collision children during collision detection, simplifying collision-intersection computations.",
+          "childNodes": [
+            "Anchor",
+            "AudioClip",
+            "Background",
+            "Billboard",
+            "Box",
+            "Collision",
+            "ColorInterpolator",
+            "Cone",
+            "CoordinateInterpolator",
+            "Cylinder",
+            "CylinderSensor",
+            "DirectionalLight",
+            "ElevationGrid",
+            "Extrusion",
+            "Fog",
+            "Group",
+            "IndexedFaceSet",
+            "IndexedLineSet",
+            "Inline",
+            "LOD",
+            "LineSet",
+            "MovieTexture",
+            "NavigationInfo",
+            "NormalInterpolator",
+            "OrientationInterpolator",
+            "PlaneSensor",
+            "PointLight",
+            "PointSet",
+            "PositionInterpolator",
+            "ProximitySensor",
+            "ScalarInterpolator",
+            "Script",
+            "Shape",
+            "Sound",
+            "Sphere",
+            "SphereSensor",
+            "SpotLight",
+            "Switch",
+            "Text",
+            "TimeSensor",
+            "TouchSensor",
+            "Transform",
+            "Viewpoint",
+            "VisibilitySensor",
+            "WorldInfo"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "collideTime",
+          "type": "SFTime",
+          "access": "eventOut",
+          "default": "",
+          "doc": "Time of collision between camera (avatar) and geometry.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "enabled",
+          "type": "SFBool",
+          "access": "exposedField",
+          "default": "true",
+          "doc": "Enables/disables collision detection for children and all descendants.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "isActive",
+          "type": "SFBool",
+          "access": "eventOut",
+          "default": "",
+          "doc": "isActive true/false events are sent when triggering the sensor.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "Color",
+      "component": "Rendering",
+      "level": 1,
+      "summary": "Color node defines a set of RGB color values that apply either to a sibling Coordinate|CoordinateDouble node, or else to a parent ElevationGrid node.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/rendering.html#Color",
+      "fields": [
+        {
+          "name": "color",
+          "type": "MFColor",
+          "access": "exposedField",
+          "default": "",
+          "doc": "The color field defines an array of 3-tuple RGB colors.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "ColorInterpolator",
+      "component": "Interpolation",
+      "level": 1,
+      "summary": "ColorInterpolator generates a range of color values.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/interpolators.html#ColorInterpolator",
+      "fields": [
+        {
+          "name": "set_fraction",
+          "type": "SFFloat",
+          "access": "eventIn",
+          "default": "",
+          "doc": "set_fraction selects input key for corresponding keyValue output.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "key",
+          "type": "MFFloat",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Definition values for linear-interpolation function input intervals, listed in non-decreasing order and corresponding to a value in the keyValue array.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "keyValue",
+          "type": "MFColor",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Output values for linear interpolation, each corresponding to an input-fraction value in the key array.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "value_changed",
+          "type": "SFColor",
+          "access": "eventOut",
+          "default": "",
+          "doc": "Linearly interpolated output value determined by current key time and corresponding keyValue pair.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "Cone",
+      "component": "Geometry",
+      "level": 1,
+      "summary": "Cone is a geometry node.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/geometry3D.html#Cone",
+      "fields": [
+        {
+          "name": "bottomRadius",
+          "type": "SFFloat",
+          "access": "field",
+          "default": "1",
+          "doc": "Size in meters.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "height",
+          "type": "SFFloat",
+          "access": "field",
+          "default": "2",
+          "doc": "Size in meters.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "bottom",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "Whether to draw bottom (other inside faces are not drawn).",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "side",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "Whether to draw sides (other inside faces are not drawn).",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "solid",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off).",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "Coordinate",
+      "component": "Rendering",
+      "level": 1,
+      "summary": "Coordinate builds geometry by defining a set of 3D coordinate (triplet) point values.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/rendering.html#Coordinate",
+      "fields": [
+        {
+          "name": "point",
+          "type": "MFVec3f",
+          "access": "exposedField",
+          "default": "",
+          "doc": "point contains a set of 3D coordinate (triplet) point values.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "CoordinateInterpolator",
+      "component": "Interpolation",
+      "level": 1,
+      "summary": "CoordinateInterpolator linearly interpolates among a list of 3-tuple MFVec3f arrays, producing a single MFVec3f array that is fractional average between two nearest arrays in the list.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/interpolators.html#CoordinateInterpolator",
+      "fields": [
+        {
+          "name": "set_fraction",
+          "type": "SFFloat",
+          "access": "eventIn",
+          "default": "",
+          "doc": "set_fraction selects input key for corresponding keyValue output.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "key",
+          "type": "MFFloat",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Definition values for linear-interpolation function input intervals, listed in non-decreasing order and corresponding to a value in the keyValue array.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "keyValue",
+          "type": "MFVec3f",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Output values for linear interpolation, each corresponding to an input-fraction value in the key array.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "value_changed",
+          "type": "MFVec3f",
+          "access": "eventOut",
+          "default": "",
+          "doc": "Linearly interpolated output value determined by current key time and corresponding keyValue pair.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "Cylinder",
+      "component": "Geometry",
+      "level": 1,
+      "summary": "Cylinder is a geometry node.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/geometry3D.html#Cylinder",
+      "fields": [
+        {
+          "name": "radius",
+          "type": "SFFloat",
+          "access": "field",
+          "default": "1",
+          "doc": "Size in meters.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "height",
+          "type": "SFFloat",
+          "access": "field",
+          "default": "2",
+          "doc": "Size in meters.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "bottom",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "Whether to draw bottom (inside faces are never drawn).",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "side",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "Whether to draw sides (inside faces are never drawn).",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "top",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "Whether to draw top (inside faces are never drawn).",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "solid",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off).",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "CylinderSensor",
+      "component": "PointingDeviceSensor",
+      "level": 1,
+      "summary": "CylinderSensor converts pointer motion (for example, a mouse or wand) into rotation values using an invisible cylinder aligned with local Y-axis.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/pointingDeviceSensor.html#CylinderSensor",
+      "fields": [
+        {
+          "name": "autoOffset",
+          "type": "SFBool",
+          "access": "exposedField",
+          "default": "true",
+          "doc": "determines whether previous offset values are remembered/accumulated.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "axisRotation",
+          "type": "SFRotation",
+          "access": "exposedField",
+          "default": "0 0 1 0",
+          "doc": "axisRotation determines local sensor coordinate system by rotating the local coordinate system.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "description",
+          "type": "SFString",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Author-provided prose that describes intended purpose of this node.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "diskAngle",
+          "type": "SFFloat",
+          "access": "exposedField",
+          "default": "0.26179167",
+          "doc": "Help decide rotation behavior from initial relative bearing of pointer drag: acute angle whether cylinder sides or end-cap disks of virtual-geometry sensor are used for manipulation.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "enabled",
+          "type": "SFBool",
+          "access": "exposedField",
+          "default": "true",
+          "doc": "Enables/disables node operation.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "maxAngle",
+          "type": "SFFloat",
+          "access": "exposedField",
+          "default": "-1",
+          "doc": "clamps rotation_changed events within range of min/max values Hint: if minAngle > maxAngle, rotation is not clamped.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "minAngle",
+          "type": "SFFloat",
+          "access": "exposedField",
+          "default": "0",
+          "doc": "clamps rotation_changed events within range of min/max values Hint: if minAngle > maxAngle, rotation is not clamped.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "offset",
+          "type": "SFFloat",
+          "access": "exposedField",
+          "default": "0",
+          "doc": "Sends event and remembers last value sensed.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "isActive",
+          "type": "SFBool",
+          "access": "eventOut",
+          "default": "",
+          "doc": "Select geometry by activating the pointing device (for example, clicking the mouse) to generate isActive events.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "isOver",
+          "type": "SFBool",
+          "access": "eventOut",
+          "default": "",
+          "doc": "Hover over geometry by aiming the mouse (or pointing device) to generate isOver events.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "rotation_changed",
+          "type": "SFRotation",
+          "access": "eventOut",
+          "default": "",
+          "doc": "rotation_changed events equal sum of relative bearing changes plus offset value about Y-axis in local coordinate system.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "trackPoint_changed",
+          "type": "SFVec3f",
+          "access": "eventOut",
+          "default": "",
+          "doc": "trackPoint_changed events give intersection point of bearing with sensor's virtual geometry.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "DirectionalLight",
+      "component": "Lighting",
+      "level": 1,
+      "summary": "DirectionalLight might not be scoped by parent Group or Transform at levels 1 or 2.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/lighting.html#DirectionalLight",
+      "fields": [
+        {
+          "name": "ambientIntensity",
+          "type": "SFFloat",
+          "access": "exposedField",
+          "default": "0",
+          "doc": "Brightness of ambient (nondirectional background) emission from the light.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "color",
+          "type": "SFColor",
+          "access": "exposedField",
+          "default": "1 1 1",
+          "doc": "color of light, applied to colors of objects.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "intensity",
+          "type": "SFFloat",
+          "access": "exposedField",
+          "default": "1",
+          "doc": "Brightness of direct emission from the light.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "on",
+          "type": "SFBool",
+          "access": "exposedField",
+          "default": "true",
+          "doc": "Enables/disables this light source.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "global",
+          "type": "SFBool",
+          "access": "exposedField",
+          "default": "false",
+          "doc": "Global lights illuminate all objects within their volume of lighting influence.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "direction",
+          "type": "SFVec3f",
+          "access": "exposedField",
+          "default": "0 0 -1",
+          "doc": "Orientation vector of light relative to local coordinate system.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "ElevationGrid",
+      "component": "Geometry",
+      "level": 1,
+      "summary": "ElevationGrid is a geometry node defining a rectangular height field, with default values for a 1m by 1m square at height 0.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/geometry3D.html#ElevationGrid",
+      "fields": [
+        {
+          "name": "height",
+          "type": "MFFloat",
+          "access": "field",
+          "default": "",
+          "doc": "Grid array of height vertices with upward direction along +Y axis, with xDimension rows and zDimension columns.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "set_height",
+          "type": "MFFloat",
+          "access": "eventIn",
+          "default": "",
+          "doc": "Grid array of height vertices with upward direction along +Y axis, with xDimension rows and zDimension columns.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "color",
+          "type": "SFNode",
+          "access": "exposedField",
+          "default": "NULL",
+          "doc": "Optional single contained Color or ColorRGBA node that can specify color values applied to corresponding vertices according to colorPerVertex field.",
+          "childNodes": [
+            "Color"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "normal",
+          "type": "SFNode",
+          "access": "exposedField",
+          "default": "NULL",
+          "doc": "Optional single contained Normal node that can specify perpendicular vectors for corresponding vertices to support rendering computations, applied according to the normalPerVertex field.",
+          "childNodes": [
+            "Normal"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "texCoord",
+          "type": "SFNode",
+          "access": "exposedField",
+          "default": "NULL",
+          "doc": "Optional single contained TextureCoordinate, TextureCoordinateGenerator or MultiTextureCoordinate node that can specify coordinates for texture mapping onto corresponding geometry.",
+          "childNodes": [
+            "TextureCoordinate"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "ccw",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "ccw defines clockwise/counterclockwise ordering of vertex coordinates, which in turn defines front/back orientation of polygon normals according to Right-Hand Rule (RHR).",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "colorPerVertex",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "Whether Color node color values are applied to each point vertex (true) or per quadrilateral (false).",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "creaseAngle",
+          "type": "SFFloat",
+          "access": "field",
+          "default": "0",
+          "doc": "creaseAngle defines angle (in radians) for determining whether adjacent polygons are drawn with sharp edges or smooth shading.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "normalPerVertex",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "Whether Normal node vector values are applied to each point vertex (true) or per quadrilateral (false).",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "solid",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off).",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "xDimension",
+          "type": "SFInt32",
+          "access": "field",
+          "default": "0",
+          "doc": "Number of elements in the height array along X direction.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "zDimension",
+          "type": "SFInt32",
+          "access": "field",
+          "default": "0",
+          "doc": "Number of elements in the height array along Z direction.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "xSpacing",
+          "type": "SFFloat",
+          "access": "field",
+          "default": "1.0",
+          "doc": "Meters distance between grid-array vertices along X direction.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "zSpacing",
+          "type": "SFFloat",
+          "access": "field",
+          "default": "1.0",
+          "doc": "Meters distance between grid-array vertices along Z direction.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "Extrusion",
+      "component": "Geometry",
+      "level": 1,
+      "summary": "Extrusion is a geometry node that sequentially stretches a 2D cross section along a 3D-spine path in the local coordinate system, creating an outer hull.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/geometry3D.html#Extrusion",
+      "fields": [
+        {
+          "name": "beginCap",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "Whether beginning cap is drawn (similar to Cylinder top cap).",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "ccw",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "The ccw field indicates counterclockwise ordering of vertex-coordinates orientation.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "convex",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "The convex field is a hint to renderers whether all polygons in a shape are convex (true), or possibly concave (false).",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "creaseAngle",
+          "type": "SFFloat",
+          "access": "field",
+          "default": "0",
+          "doc": "creaseAngle defines angle (in radians) where adjacent polygons are drawn with sharp edges or smooth shading.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "crossSection",
+          "type": "MFVec2f",
+          "access": "field",
+          "default": "1 1 1 -1 -1 -1 -1 1 1 1",
+          "doc": "The crossSection array defines a silhouette outline of the outer Extrusion surface.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "endCap",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "Whether end cap is drawn (similar to Cylinder bottom cap).",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "orientation",
+          "type": "MFRotation",
+          "access": "field",
+          "default": "0 0 1 0",
+          "doc": "The orientation array is a list of axis-angle 4-tuple values applied at each spine-aligned cross-section plane.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "scale",
+          "type": "MFVec2f",
+          "access": "field",
+          "default": "1 1",
+          "doc": "scale is a list of 2D-scale parameters applied at each spine-aligned cross-section plane.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "solid",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off).",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "spine",
+          "type": "MFVec3f",
+          "access": "field",
+          "default": "0 0 0 0 1 0",
+          "doc": "The spine array defines a center-line sequence of 3D points that define a piecewise-linear curve forming a series of connected vertices.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "set_crossSection",
+          "type": "MFVec2f",
+          "access": "eventIn",
+          "default": "",
+          "doc": "The crossSection array defines a silhouette outline of the outer Extrusion surface.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "set_orientation",
+          "type": "MFRotation",
+          "access": "eventIn",
+          "default": "",
+          "doc": "The orientation array is a list of axis-angle 4-tuple values applied at each spine-aligned cross-section plane.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "set_scale",
+          "type": "MFVec2f",
+          "access": "eventIn",
+          "default": "",
+          "doc": "scale is a list of 2D-scale parameters applied at each spine-aligned cross-section plane.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "set_spine",
+          "type": "MFVec3f",
+          "access": "eventIn",
+          "default": "",
+          "doc": "The spine array defines a center-line sequence of 3D points that define a piecewise-linear curve forming a series of connected vertices.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "Fog",
+      "component": "EnvironmentalEffects",
+      "level": 1,
+      "summary": "Fog simulates atmospheric effects by blending distant objects with fog color.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/environmentalEffects.html#Fog",
+      "fields": [
+        {
+          "name": "isBound",
+          "type": "SFBool",
+          "access": "eventOut",
+          "default": "",
+          "doc": "Output event true gets sent when node becomes bound and activated, otherwise output event false gets sent when node becomes unbound and deactivated.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "set_bind",
+          "type": "SFBool",
+          "access": "eventIn",
+          "default": "",
+          "doc": "Receiving event set_bind=true activates and binds this node at the top of the binding stack.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "bindTime",
+          "type": "SFTime",
+          "access": "eventOut",
+          "default": "",
+          "doc": "Event sent reporting timestamp when node becomes active/inactive.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "color",
+          "type": "SFColor",
+          "access": "exposedField",
+          "default": "1 1 1",
+          "doc": "Fog color.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "visibilityRange",
+          "type": "SFFloat",
+          "access": "exposedField",
+          "default": "0",
+          "doc": "Distance in meters where objects are totally obscured by the fog, using local coordinate system.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "fogType",
+          "type": "SFString",
+          "access": "exposedField",
+          "default": "LINEAR",
+          "doc": "Specifies algorithm for rate of increasing Fog, either LINEAR or EXPONENTIAL.",
+          "childNodes": [],
+          "aliases": [
+            "intensity_fogType"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "FontStyle",
+      "component": "Text",
+      "level": 1,
+      "summary": "FontStyle is an X3DFontStyleNode that defines the size, family, justification, and other styles used by Text nodes.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/text.html#FontStyle",
+      "fields": [
+        {
+          "name": "family",
+          "type": "MFString",
+          "access": "field",
+          "default": "\"SERIF\"",
+          "doc": "Array of quoted font family names in preference order, browsers use the first supported family.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "horizontal",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "Whether text direction is horizontal (true) or vertical (false).",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "justify",
+          "type": "MFString",
+          "access": "field",
+          "default": "\"BEGIN\"",
+          "doc": "The justify field determines horizontal and vertical alignment of text layout, relative to the origin of the object coordinate system.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "language",
+          "type": "SFString",
+          "access": "field",
+          "default": "",
+          "doc": "Language codes consist of a primary code and a (possibly empty) series of subcodes.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "leftToRight",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "Whether text direction is left-to-right (true) or right-to-left (false).",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "size",
+          "type": "SFFloat",
+          "access": "field",
+          "default": "1.0",
+          "doc": "Nominal height (in local coordinate system) of text glyphs, also sets default spacing between adjacent lines of text.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "spacing",
+          "type": "SFFloat",
+          "access": "field",
+          "default": "1.0",
+          "doc": "Adjustment factor for line spacing between adjacent lines of text.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "style",
+          "type": "SFString",
+          "access": "field",
+          "default": "PLAIN",
+          "doc": "Pick one of four values for text style (PLAIN|BOLD|ITALIC|BOLDITALIC).",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "topToBottom",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "Whether text direction is top-to-bottom (true) or bottom-to-top (false).",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "Group",
+      "component": "Grouping",
+      "level": 1,
+      "summary": "Group is a Grouping node that can contain most nodes.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/grouping.html#Group",
+      "fields": [
+        {
+          "name": "children",
+          "type": "MFNode",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Grouping nodes contain an ordered list of children nodes.",
+          "childNodes": [
+            "Anchor",
+            "AudioClip",
+            "Background",
+            "Billboard",
+            "Box",
+            "Collision",
+            "ColorInterpolator",
+            "Cone",
+            "CoordinateInterpolator",
+            "Cylinder",
+            "CylinderSensor",
+            "DirectionalLight",
+            "ElevationGrid",
+            "Extrusion",
+            "Fog",
+            "Group",
+            "IndexedFaceSet",
+            "IndexedLineSet",
+            "Inline",
+            "LOD",
+            "LineSet",
+            "MovieTexture",
+            "NavigationInfo",
+            "NormalInterpolator",
+            "OrientationInterpolator",
+            "PlaneSensor",
+            "PointLight",
+            "PointSet",
+            "PositionInterpolator",
+            "ProximitySensor",
+            "ScalarInterpolator",
+            "Script",
+            "Shape",
+            "Sound",
+            "Sphere",
+            "SphereSensor",
+            "SpotLight",
+            "Switch",
+            "Text",
+            "TimeSensor",
+            "TouchSensor",
+            "Transform",
+            "Viewpoint",
+            "VisibilitySensor",
+            "WorldInfo"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "addChildren",
+          "type": "MFNode",
+          "access": "eventIn",
+          "default": "",
+          "doc": "",
+          "childNodes": [
+            "Anchor",
+            "AudioClip",
+            "Background",
+            "Billboard",
+            "Box",
+            "Collision",
+            "ColorInterpolator",
+            "Cone",
+            "CoordinateInterpolator",
+            "Cylinder",
+            "CylinderSensor",
+            "DirectionalLight",
+            "ElevationGrid",
+            "Extrusion",
+            "Fog",
+            "Group",
+            "IndexedFaceSet",
+            "IndexedLineSet",
+            "Inline",
+            "LOD",
+            "LineSet",
+            "MovieTexture",
+            "NavigationInfo",
+            "NormalInterpolator",
+            "OrientationInterpolator",
+            "PlaneSensor",
+            "PointLight",
+            "PointSet",
+            "PositionInterpolator",
+            "ProximitySensor",
+            "ScalarInterpolator",
+            "Script",
+            "Shape",
+            "Sound",
+            "Sphere",
+            "SphereSensor",
+            "SpotLight",
+            "Switch",
+            "Text",
+            "TimeSensor",
+            "TouchSensor",
+            "Transform",
+            "Viewpoint",
+            "VisibilitySensor",
+            "WorldInfo"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "removeChildren",
+          "type": "MFNode",
+          "access": "eventIn",
+          "default": "",
+          "doc": "",
+          "childNodes": [
+            "Anchor",
+            "AudioClip",
+            "Background",
+            "Billboard",
+            "Box",
+            "Collision",
+            "ColorInterpolator",
+            "Cone",
+            "CoordinateInterpolator",
+            "Cylinder",
+            "CylinderSensor",
+            "DirectionalLight",
+            "ElevationGrid",
+            "Extrusion",
+            "Fog",
+            "Group",
+            "IndexedFaceSet",
+            "IndexedLineSet",
+            "Inline",
+            "LOD",
+            "LineSet",
+            "MovieTexture",
+            "NavigationInfo",
+            "NormalInterpolator",
+            "OrientationInterpolator",
+            "PlaneSensor",
+            "PointLight",
+            "PointSet",
+            "PositionInterpolator",
+            "ProximitySensor",
+            "ScalarInterpolator",
+            "Script",
+            "Shape",
+            "Sound",
+            "Sphere",
+            "SphereSensor",
+            "SpotLight",
+            "Switch",
+            "Text",
+            "TimeSensor",
+            "TouchSensor",
+            "Transform",
+            "Viewpoint",
+            "VisibilitySensor",
+            "WorldInfo"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "bboxCenter",
+          "type": "SFVec3f",
+          "access": "field",
+          "default": "0 0 0",
+          "doc": "Bounding box center accompanies bboxSize and provides an optional hint for bounding box position offset from origin of local coordinate system.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "bboxSize",
+          "type": "SFVec3f",
+          "access": "field",
+          "default": "-1 -1 -1",
+          "doc": "Bounding box size is usually omitted, and can easily be calculated automatically by an X3D player at scene-loading time with minimal computational cost.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "bboxDisplay",
+          "type": "SFBool",
+          "access": "field",
+          "default": "false",
+          "doc": "Whether to display bounding box for associated geometry, aligned with world coordinates.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "ImageTexture",
+      "component": "Texturing",
+      "level": 1,
+      "summary": "ImageTexture maps a 2D-image file onto a geometric shape.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/texturing.html#ImageTexture",
+      "fields": [
+        {
+          "name": "description",
+          "type": "SFString",
+          "access": "field",
+          "default": "",
+          "doc": "Author-provided prose that describes intended purpose of the url asset.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "repeatS",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "Whether to repeat texture along S axis horizontally from left to right.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "repeatT",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "Whether to repeat texture along T axis vertically from top to bottom.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "url",
+          "type": "MFString",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Location and filename of image.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "textureProperties",
+          "type": "SFNode",
+          "access": "field",
+          "default": "NULL",
+          "doc": "Optional single contained TextureProperties node that can specify additional visual attributes applied to corresponding texture images.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "autoRefresh",
+          "type": "SFTime",
+          "access": "field",
+          "default": "0",
+          "doc": "autoRefresh defines interval in seconds before automatic reload of current url asset is performed.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "autoRefreshTimeLimit",
+          "type": "SFTime",
+          "access": "field",
+          "default": "3600",
+          "doc": "autoRefreshTimeLimit defines maximum duration that automatic refresh activity can occur.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "load",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "load=true means load immediately, load=false means defer loading or else unload a previously loaded asset.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "IndexedFaceSet",
+      "component": "Geometry",
+      "level": 1,
+      "summary": "IndexedFaceSet defines polygons using index lists corresponding to vertex coordinates.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/geometry3D.html#IndexedFaceSet",
+      "fields": [
+        {
+          "name": "coord",
+          "type": "SFNode",
+          "access": "exposedField",
+          "default": "NULL",
+          "doc": "Optional single contained Coordinate or CoordinateDouble node that can specify a list of vertex values.",
+          "childNodes": [
+            "Coordinate"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "texCoord",
+          "type": "SFNode",
+          "access": "exposedField",
+          "default": "NULL",
+          "doc": "Optional single contained TextureCoordinate, TextureCoordinateGenerator or MultiTextureCoordinate node that can specify coordinates for texture mapping onto corresponding geometry.",
+          "childNodes": [
+            "TextureCoordinate"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "color",
+          "type": "SFNode",
+          "access": "exposedField",
+          "default": "NULL",
+          "doc": "Optional single contained Color or ColorRGBA node that can specify color values applied to corresponding vertices according to colorIndex and colorPerVertex fields.",
+          "childNodes": [
+            "Color"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "normal",
+          "type": "SFNode",
+          "access": "exposedField",
+          "default": "NULL",
+          "doc": "Optional single contained Normal node that can specify perpendicular vectors for corresponding vertices to support rendering computations, applied according to the normalPerVertex field.",
+          "childNodes": [
+            "Normal"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "fogCoord",
+          "type": "SFNode",
+          "access": "exposedField",
+          "default": "NULL",
+          "doc": "Optional single contained FogCoordinate node that can specify depth parameters for fog in corresponding geometry.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "attrib",
+          "type": "SFNode",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Optional single contained FloatVertexAttribute node that can specify list of per-vertex attribute information for programmable shaders.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "solid",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off).",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "convex",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "The convex field is a hint to renderers whether all polygons in a shape are convex (true), or possibly concave (false).",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "ccw",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "ccw defines clockwise/counterclockwise ordering of vertex coordinates, which in turn defines front/back orientation of polygon normals according to Right-Hand Rule (RHR).",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "creaseAngle",
+          "type": "SFFloat",
+          "access": "field",
+          "default": "0",
+          "doc": "creaseAngle defines angle (in radians) for determining whether adjacent polygons are drawn with sharp edges or smooth shading.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "colorPerVertex",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "Whether Color|ColorRGBA values are applied to each point vertex (true) or to each polygon face (false).",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "normalPerVertex",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "Whether Normal node vector values are applied to each point vertex (true) or to each polygon face (false).",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "set_normalIndex",
+          "type": "MFInt32",
+          "access": "eventIn",
+          "default": "",
+          "doc": "normalIndex values define the order in which normal vectors are applied to polygons (or vertices), interspersed by -1 if normalPerVertex=true.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "set_coordIndex",
+          "type": "MFInt32",
+          "access": "eventIn",
+          "default": "",
+          "doc": "coordIndex indices provide the order in which coordinates are applied to construct each polygon face.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "set_colorIndex",
+          "type": "MFInt32",
+          "access": "eventIn",
+          "default": "",
+          "doc": "colorIndex values define the order in which Color|ColorRGBA values are applied to polygons (or vertices), interspersed by -1 if colorlPerVertex=true.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "set_texCoordIndex",
+          "type": "MFInt32",
+          "access": "eventIn",
+          "default": "",
+          "doc": "List of texture-coordinate indices mapping attached texture to corresponding coordinates.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "normalIndex",
+          "type": "MFInt32",
+          "access": "field",
+          "default": "",
+          "doc": "normalIndex values define the order in which normal vectors are applied to polygons (or vertices), interspersed by -1 if normalPerVertex=true.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "coordIndex",
+          "type": "MFInt32",
+          "access": "field",
+          "default": "",
+          "doc": "coordIndex indices provide the order in which coordinates are applied to construct each polygon face.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "colorIndex",
+          "type": "MFInt32",
+          "access": "field",
+          "default": "",
+          "doc": "colorIndex values define the order in which Color|ColorRGBA values are applied to polygons (or vertices), interspersed by -1 if colorlPerVertex=true.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "texCoordIndex",
+          "type": "MFInt32",
+          "access": "field",
+          "default": "",
+          "doc": "List of texture-coordinate indices mapping attached texture to corresponding coordinates.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "IndexedLineSet",
+      "component": "Rendering",
+      "level": 1,
+      "summary": "IndexedLineSet defines polyline segments using index lists corresponding to vertex coordinates.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/rendering.html#IndexedLineSet",
+      "fields": [
+        {
+          "name": "coord",
+          "type": "SFNode",
+          "access": "exposedField",
+          "default": "NULL",
+          "doc": "Optional single contained Coordinate or CoordinateDouble node that can specify a list of vertex values.",
+          "childNodes": [
+            "Coordinate"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "color",
+          "type": "SFNode",
+          "access": "exposedField",
+          "default": "NULL",
+          "doc": "Optional single contained Color or ColorRGBA node that can specify color values applied to corresponding vertices according to colorIndex and colorPerVertex fields.",
+          "childNodes": [
+            "Color"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "fogCoord",
+          "type": "SFNode",
+          "access": "exposedField",
+          "default": "NULL",
+          "doc": "Optional single contained FogCoordinate node that can specify depth parameters for fog in corresponding geometry.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "attrib",
+          "type": "SFNode",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Optional single contained FloatVertexAttribute node that can specify list of per-vertex attribute information for programmable shaders.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "colorPerVertex",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "Whether Color node color values are applied to each point vertex (true) or per polyline (false).",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "coordIndex",
+          "type": "MFInt32",
+          "access": "field",
+          "default": "",
+          "doc": "coordIndex indices provide the order in which coordinates are applied to construct each polygon face.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "set_coordIndex",
+          "type": "MFInt32",
+          "access": "eventIn",
+          "default": "",
+          "doc": "coordIndex indices provide the order in which coordinates are applied to construct each polyline.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "colorIndex",
+          "type": "MFInt32",
+          "access": "field",
+          "default": "",
+          "doc": "colorIndex values define the order in which Color|ColorRGBA values are applied to polygons (or vertices), interspersed by -1 if colorlPerVertex=true.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "set_colorIndex",
+          "type": "MFInt32",
+          "access": "eventIn",
+          "default": "",
+          "doc": "colorIndex values define the order in which Color|ColorRGBA values are applied to polygons (or vertices), interspersed by -1 if colorlPerVertex=true.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "Inline",
+      "component": "Networking",
+      "level": 1,
+      "summary": "Inline can load another X3D or VRML model into the current scene via url.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/networking.html#Inline",
+      "fields": [
+        {
+          "name": "url",
+          "type": "MFString",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Address of X3D world to load Inline with current scene, retrieved either from local system or an online address.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "bboxCenter",
+          "type": "SFVec3f",
+          "access": "field",
+          "default": "0 0 0",
+          "doc": "Bounding box center accompanies bboxSize and provides an optional hint for bounding box position offset from origin of local coordinate system.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "bboxSize",
+          "type": "SFVec3f",
+          "access": "field",
+          "default": "-1 -1 -1",
+          "doc": "Bounding box size is usually omitted, and can easily be calculated automatically by an X3D player at scene-loading time with minimal computational cost.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "bboxDisplay",
+          "type": "SFBool",
+          "access": "field",
+          "default": "false",
+          "doc": "Whether to display bounding box for associated geometry, aligned with world coordinates.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "visible",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "Whether or not renderable content within this node is visually displayed.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "load",
+          "type": "SFBool",
+          "access": "exposedField",
+          "default": "true",
+          "doc": "load=true means load immediately, load=false means defer loading or else unload a previously loaded asset.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "LOD",
+      "component": "Navigation",
+      "level": 1,
+      "summary": "LOD (Level Of Detail) uses camera-to-object distance to switch among contained child levels.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/navigation.html#LOD",
+      "fields": [
+        {
+          "name": "children",
+          "type": "MFNode",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Grouping nodes contain an ordered list of children nodes.",
+          "childNodes": [
+            "Anchor",
+            "AudioClip",
+            "Background",
+            "Billboard",
+            "Box",
+            "Collision",
+            "ColorInterpolator",
+            "Cone",
+            "CoordinateInterpolator",
+            "Cylinder",
+            "CylinderSensor",
+            "DirectionalLight",
+            "ElevationGrid",
+            "Extrusion",
+            "Fog",
+            "Group",
+            "IndexedFaceSet",
+            "IndexedLineSet",
+            "Inline",
+            "LOD",
+            "LineSet",
+            "MovieTexture",
+            "NavigationInfo",
+            "NormalInterpolator",
+            "OrientationInterpolator",
+            "PlaneSensor",
+            "PointLight",
+            "PointSet",
+            "PositionInterpolator",
+            "ProximitySensor",
+            "ScalarInterpolator",
+            "Script",
+            "Shape",
+            "Sound",
+            "Sphere",
+            "SphereSensor",
+            "SpotLight",
+            "Switch",
+            "Text",
+            "TimeSensor",
+            "TouchSensor",
+            "Transform",
+            "Viewpoint",
+            "VisibilitySensor",
+            "WorldInfo"
+          ],
+          "aliases": [
+            "level"
+          ]
+        },
+        {
+          "name": "addChildren",
+          "type": "MFNode",
+          "access": "eventIn",
+          "default": "",
+          "doc": "",
+          "childNodes": [
+            "Anchor",
+            "AudioClip",
+            "Background",
+            "Billboard",
+            "Box",
+            "Collision",
+            "ColorInterpolator",
+            "Cone",
+            "CoordinateInterpolator",
+            "Cylinder",
+            "CylinderSensor",
+            "DirectionalLight",
+            "ElevationGrid",
+            "Extrusion",
+            "Fog",
+            "Group",
+            "IndexedFaceSet",
+            "IndexedLineSet",
+            "Inline",
+            "LOD",
+            "LineSet",
+            "MovieTexture",
+            "NavigationInfo",
+            "NormalInterpolator",
+            "OrientationInterpolator",
+            "PlaneSensor",
+            "PointLight",
+            "PointSet",
+            "PositionInterpolator",
+            "ProximitySensor",
+            "ScalarInterpolator",
+            "Script",
+            "Shape",
+            "Sound",
+            "Sphere",
+            "SphereSensor",
+            "SpotLight",
+            "Switch",
+            "Text",
+            "TimeSensor",
+            "TouchSensor",
+            "Transform",
+            "Viewpoint",
+            "VisibilitySensor",
+            "WorldInfo"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "removeChildren",
+          "type": "MFNode",
+          "access": "eventIn",
+          "default": "",
+          "doc": "",
+          "childNodes": [
+            "Anchor",
+            "AudioClip",
+            "Background",
+            "Billboard",
+            "Box",
+            "Collision",
+            "ColorInterpolator",
+            "Cone",
+            "CoordinateInterpolator",
+            "Cylinder",
+            "CylinderSensor",
+            "DirectionalLight",
+            "ElevationGrid",
+            "Extrusion",
+            "Fog",
+            "Group",
+            "IndexedFaceSet",
+            "IndexedLineSet",
+            "Inline",
+            "LOD",
+            "LineSet",
+            "MovieTexture",
+            "NavigationInfo",
+            "NormalInterpolator",
+            "OrientationInterpolator",
+            "PlaneSensor",
+            "PointLight",
+            "PointSet",
+            "PositionInterpolator",
+            "ProximitySensor",
+            "ScalarInterpolator",
+            "Script",
+            "Shape",
+            "Sound",
+            "Sphere",
+            "SphereSensor",
+            "SpotLight",
+            "Switch",
+            "Text",
+            "TimeSensor",
+            "TouchSensor",
+            "Transform",
+            "Viewpoint",
+            "VisibilitySensor",
+            "WorldInfo"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "bboxCenter",
+          "type": "SFVec3f",
+          "access": "field",
+          "default": "0 0 0",
+          "doc": "Bounding box center accompanies bboxSize and provides an optional hint for bounding box position offset from origin of local coordinate system.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "bboxSize",
+          "type": "SFVec3f",
+          "access": "field",
+          "default": "-1 -1 -1",
+          "doc": "Bounding box size is usually omitted, and can easily be calculated automatically by an X3D player at scene-loading time with minimal computational cost.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "bboxDisplay",
+          "type": "SFBool",
+          "access": "field",
+          "default": "false",
+          "doc": "Whether to display bounding box for associated geometry, aligned with world coordinates.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "center",
+          "type": "SFVec3f",
+          "access": "field",
+          "default": "0 0 0",
+          "doc": "Viewpoint distance-measurement offset from origin of local coordinate system, used for LOD node distance calculations.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "range",
+          "type": "MFFloat",
+          "access": "field",
+          "default": "",
+          "doc": "Specifies ideal distances at which to switch between levels.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "forceTransitions",
+          "type": "SFBool",
+          "access": "field",
+          "default": "false",
+          "doc": "Whether to perform every range-based transition, regardless of browser optimizations that might otherwise occur.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "level_changed",
+          "type": "SFInt32",
+          "access": "eventOut",
+          "default": "",
+          "doc": "Output event that reports current level of LOD children whenever switching occurs.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "LineSet",
+      "component": "Rendering",
+      "level": 1,
+      "summary": "LineSet is a geometry node that can contain a Coordinate|CoordinateDouble node and optionally a Color|ColorRGBA node.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/rendering.html#LineSet",
+      "fields": [
+        {
+          "name": "color",
+          "type": "SFNode",
+          "access": "exposedField",
+          "default": "NULL",
+          "doc": "Optional single contained Color or ColorRGBA node that can specify color values applied to corresponding vertices according to colorIndex and colorPerVertex fields.",
+          "childNodes": [
+            "Color"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "coord",
+          "type": "SFNode",
+          "access": "exposedField",
+          "default": "NULL",
+          "doc": "Optional single contained Coordinate or CoordinateDouble node that can specify a list of vertex values.",
+          "childNodes": [
+            "Coordinate"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "vertexCount",
+          "type": "MFInt32",
+          "access": "exposedField",
+          "default": "",
+          "doc": "vertexCount describes how many vertices are used in each individual polyline segment from the Coordinate point values.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "Material",
+      "component": "Shape",
+      "level": 1,
+      "summary": "Material specifies surface rendering properties for associated geometry.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/shape.html#Material",
+      "fields": [
+        {
+          "name": "ambientIntensity",
+          "type": "SFFloat",
+          "access": "exposedField",
+          "default": "0.2",
+          "doc": "how much ambient omnidirectional light is reflected from all light sources.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "diffuseColor",
+          "type": "SFColor",
+          "access": "exposedField",
+          "default": "0.8 0.8 0.8",
+          "doc": "how much direct, angle-dependent light is reflected from all light sources.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "emissiveColor",
+          "type": "SFColor",
+          "access": "exposedField",
+          "default": "0 0 0",
+          "doc": "how much glowing light is emitted from this object.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "shininess",
+          "type": "SFFloat",
+          "access": "exposedField",
+          "default": "0.2",
+          "doc": "Lower shininess values provide soft specular glows, while higher values result in sharper, smaller highlights.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "specularColor",
+          "type": "SFColor",
+          "access": "exposedField",
+          "default": "0 0 0",
+          "doc": "specular highlights are brightness reflections (example: shiny spots on an apple).",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "transparency",
+          "type": "SFFloat",
+          "access": "exposedField",
+          "default": "0",
+          "doc": "how \"clear\" an object is: 1.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "normalScale",
+          "type": "SFFloat",
+          "access": "exposedField",
+          "default": "1",
+          "doc": "normalScale controls the degree to which normalTexture RGB values apply XYZ-normal bump mapping to pixels in the parent material.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "occlusionStrength",
+          "type": "SFFloat",
+          "access": "exposedField",
+          "default": "1",
+          "doc": "occlusionStrength indicates areas of indirect lighting, typically called ambient occlusion.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "MovieTexture",
+      "component": "Texturing",
+      "level": 1,
+      "summary": "MovieTexture applies a 2D movie image to surface geometry, or provides audio for a Sound node.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/texturing.html#MovieTexture",
+      "fields": [
+        {
+          "name": "loop",
+          "type": "SFBool",
+          "access": "exposedField",
+          "default": "false",
+          "doc": "Repeat indefinitely when loop=true, repeat only once when loop=false.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "speed",
+          "type": "SFFloat",
+          "access": "exposedField",
+          "default": "1.0",
+          "doc": "Factor for how fast the movie (or soundtrack) is played.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "startTime",
+          "type": "SFTime",
+          "access": "exposedField",
+          "default": "0",
+          "doc": "Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "stopTime",
+          "type": "SFTime",
+          "access": "exposedField",
+          "default": "0",
+          "doc": "Absolute time: number of seconds since January 1, 1970, 00:00:00 GMT.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "pauseTime",
+          "type": "SFTime",
+          "access": "exposedField",
+          "default": "0",
+          "doc": "When time now >= pauseTime, isPaused becomes true and MovieTexture becomes paused.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "resumeTime",
+          "type": "SFTime",
+          "access": "exposedField",
+          "default": "0",
+          "doc": "When resumeTime becomes <= time now, isPaused becomes false and MovieTexture becomes active.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "elapsedTime",
+          "type": "SFTime",
+          "access": "eventOut",
+          "default": "",
+          "doc": "Current elapsed time since MovieTexture activated/running, cumulative in seconds, and not counting any paused time.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "repeatS",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "Whether to repeat texture along S axis horizontally from left to right.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "repeatT",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "Whether to repeat texture along T axis vertically from top to bottom.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "url",
+          "type": "MFString",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Location and filename of movie file or stream.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "textureProperties",
+          "type": "SFNode",
+          "access": "field",
+          "default": "NULL",
+          "doc": "Optional single contained TextureProperties node that can specify additional visual attributes applied to corresponding texture images.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "NavigationInfo",
+      "component": "Navigation",
+      "level": 1,
+      "summary": "NavigationInfo describes the user's viewing model, user navigation-interaction modalities, and also dimensional characteristics of the user's (typically invisible) avatar.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/navigation.html#NavigationInfo",
+      "fields": [
+        {
+          "name": "avatarSize",
+          "type": "MFFloat",
+          "access": "exposedField",
+          "default": "0.25 1.6 0.75",
+          "doc": "avatarSize triplet values define three separate parameters: (a) collisionDistance between user and geometry, i.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "headlight",
+          "type": "SFBool",
+          "access": "exposedField",
+          "default": "true",
+          "doc": "Enable/disable directional light that always points in the direction the user is looking.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "speed",
+          "type": "SFFloat",
+          "access": "exposedField",
+          "default": "1",
+          "doc": "Default rate at which viewer travels through scene, meters/second.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "type",
+          "type": "MFString",
+          "access": "exposedField",
+          "default": "\"EXAMINE\" \"ANY\"",
+          "doc": "Enter one or more quoted SFString values: \"EXAMINE\" \"WALK\" \"FLY\" \"LOOKAT\" \"EXPLORE\" \"ANY\" \"NONE\".",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "visibilityLimit",
+          "type": "SFFloat",
+          "access": "exposedField",
+          "default": "0",
+          "doc": "Geometry beyond the visibilityLimit may not be rendered (far clipping plane of the view frustrum).",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "transitionType",
+          "type": "MFString",
+          "access": "exposedField",
+          "default": "\"LINEAR\"",
+          "doc": "Camera transition between viewpoints.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "transitionTime",
+          "type": "MFFloat",
+          "access": "exposedField",
+          "default": "1.0",
+          "doc": "transitionTime defines the expected duration of viewpoint transition in seconds.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "set_bind",
+          "type": "SFBool",
+          "access": "eventIn",
+          "default": "",
+          "doc": "Receiving event set_bind=true activates and binds this node at the top of the binding stack.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "bindTime",
+          "type": "SFTime",
+          "access": "eventOut",
+          "default": "",
+          "doc": "Event sent reporting timestamp when node becomes active/inactive.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "isBound",
+          "type": "SFBool",
+          "access": "eventOut",
+          "default": "",
+          "doc": "Output event true gets sent when node becomes bound and activated, otherwise output event false gets sent when node becomes unbound and deactivated.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "Normal",
+      "component": "Rendering",
+      "level": 1,
+      "summary": "Normal defines a set of 3D surface-normal vectors that apply either to a sibling Coordinate | CoordinateDouble node, or else to a parent ElevationGrid node.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/rendering.html#Normal",
+      "fields": [
+        {
+          "name": "vector",
+          "type": "MFVec3f",
+          "access": "exposedField",
+          "default": "",
+          "doc": "set of unit-length normal vectors, corresponding to indexed polygons or vertices.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "NormalInterpolator",
+      "component": "Interpolation",
+      "level": 1,
+      "summary": "NormalInterpolator generates a series of normal (perpendicular) 3-tuple SFVec3f values.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/interpolators.html#NormalInterpolator",
+      "fields": [
+        {
+          "name": "set_fraction",
+          "type": "SFFloat",
+          "access": "eventIn",
+          "default": "",
+          "doc": "set_fraction selects input key for corresponding keyValue output.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "key",
+          "type": "MFFloat",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Definition values for linear-interpolation function input intervals, listed in non-decreasing order and corresponding to a value in the keyValue array.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "keyValue",
+          "type": "MFVec3f",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Output values for linear interpolation, each corresponding to an input-fraction value in the key array.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "value_changed",
+          "type": "MFVec3f",
+          "access": "eventOut",
+          "default": "",
+          "doc": "Linearly interpolated output value determined by current key time and corresponding keyValue pair.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "OrientationInterpolator",
+      "component": "Interpolation",
+      "level": 1,
+      "summary": "OrientationInterpolator generates a series of 4-tuple axis-angle SFRotation values.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/interpolators.html#OrientationInterpolator",
+      "fields": [
+        {
+          "name": "set_fraction",
+          "type": "SFFloat",
+          "access": "eventIn",
+          "default": "",
+          "doc": "set_fraction selects input key for corresponding keyValue output.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "key",
+          "type": "MFFloat",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Definition values for linear-interpolation function input intervals, listed in non-decreasing order and corresponding to a value in the keyValue array.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "keyValue",
+          "type": "MFRotation",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Output values for linear interpolation, each corresponding to an input-fraction value in the key array.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "value_changed",
+          "type": "SFRotation",
+          "access": "eventOut",
+          "default": "",
+          "doc": "Linearly interpolated output value determined by current key time and corresponding keyValue pair.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "PixelTexture",
+      "component": "Texturing",
+      "level": 1,
+      "summary": "PixelTexture creates a 2D-image texture map using a numeric array of pixel values.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/texturing.html#PixelTexture",
+      "fields": [
+        {
+          "name": "repeatS",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "Whether to repeat texture along S axis horizontally from left to right.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "repeatT",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "Whether to repeat texture along T axis vertically from top to bottom.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "image",
+          "type": "SFImage",
+          "access": "exposedField",
+          "default": "0 0 0",
+          "doc": "Defines image: width, height, number_of_components per each pixel value, and list of pixel_values.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "textureProperties",
+          "type": "SFNode",
+          "access": "field",
+          "default": "NULL",
+          "doc": "Optional single contained TextureProperties node that can specify additional visual attributes applied to corresponding texture images.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "PlaneSensor",
+      "component": "PointingDeviceSensor",
+      "level": 1,
+      "summary": "PlaneSensor converts pointing device motion into 2D translation parallel to the local Z=0 plane.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/pointingDeviceSensor.html#PlaneSensor",
+      "fields": [
+        {
+          "name": "enabled",
+          "type": "SFBool",
+          "access": "exposedField",
+          "default": "true",
+          "doc": "Enables/disables node operation.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "autoOffset",
+          "type": "SFBool",
+          "access": "exposedField",
+          "default": "true",
+          "doc": "Determines whether previous offset values are remembered/accumulated.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "trackPoint_changed",
+          "type": "SFVec3f",
+          "access": "eventOut",
+          "default": "",
+          "doc": "trackPoint_changed events give intersection point of bearing with sensor's virtual geometry.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "isActive",
+          "type": "SFBool",
+          "access": "eventOut",
+          "default": "",
+          "doc": "Select geometry by activating the pointing device (for example, clicking the mouse) to generate isActive events.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "isOver",
+          "type": "SFBool",
+          "access": "eventOut",
+          "default": "",
+          "doc": "Hover over geometry by aiming the mouse (or pointing device) to generate isOver events.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "translation_changed",
+          "type": "SFVec3f",
+          "access": "eventOut",
+          "default": "",
+          "doc": "translation_changed events equal sum of relative translation change plus offset value.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "minPosition",
+          "type": "SFVec2f",
+          "access": "exposedField",
+          "default": "0 0",
+          "doc": "minPosition and maxPosition clamp translations to a range of values measured from origin of Z=0 plane default maxPosition < minPosition means no clamping.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "maxPosition",
+          "type": "SFVec2f",
+          "access": "exposedField",
+          "default": "-1 -1",
+          "doc": "minPosition and maxPosition clamp translations to a range of values measured from origin of Z=0 plane default maxPosition < minPosition means no clamping.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "offset",
+          "type": "SFVec3f",
+          "access": "exposedField",
+          "default": "0 0 0",
+          "doc": "Sends event and remembers last value sensed.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "axisRotation",
+          "type": "SFRotation",
+          "access": "exposedField",
+          "default": "0 0 1 0",
+          "doc": "axisRotation determines local sensor coordinate system by rotating the local coordinate system.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "description",
+          "type": "SFString",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Author-provided prose that describes intended purpose of this node.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "PointLight",
+      "component": "Lighting",
+      "level": 1,
+      "summary": "Linear attenuation may occur at level 2, full support at level 3.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/lighting.html#PointLight",
+      "fields": [
+        {
+          "name": "ambientIntensity",
+          "type": "SFFloat",
+          "access": "exposedField",
+          "default": "0",
+          "doc": "Brightness of ambient (nondirectional background) emission from the light.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "color",
+          "type": "SFColor",
+          "access": "exposedField",
+          "default": "1 1 1",
+          "doc": "color of light, applied to colors of objects.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "intensity",
+          "type": "SFFloat",
+          "access": "exposedField",
+          "default": "1",
+          "doc": "Brightness of direct emission from the light.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "on",
+          "type": "SFBool",
+          "access": "exposedField",
+          "default": "true",
+          "doc": "Enables/disables this light source.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "global",
+          "type": "SFBool",
+          "access": "exposedField",
+          "default": "true",
+          "doc": "Global lights illuminate all objects within their volume of lighting influence.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "location",
+          "type": "SFVec3f",
+          "access": "exposedField",
+          "default": "0 0 0",
+          "doc": "Position of light relative to local coordinate system.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "radius",
+          "type": "SFFloat",
+          "access": "exposedField",
+          "default": "100",
+          "doc": "Maximum effective distance of light relative to local light position, affected by ancestor scaling.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "attenuation",
+          "type": "SFVec3f",
+          "access": "exposedField",
+          "default": "1 0 0",
+          "doc": "Constant, linear-distance and squared-distance dropoff factors as radial distance increases from the source.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "PointSet",
+      "component": "Rendering",
+      "level": 1,
+      "summary": "PointSet is a node that contains a set of colored 3D points, represented by contained Color|ColorRGBA and Coordinate|CoordinateDouble nodes.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/rendering.html#PointSet",
+      "fields": [
+        {
+          "name": "color",
+          "type": "SFNode",
+          "access": "exposedField",
+          "default": "NULL",
+          "doc": "Optional single contained Color or ColorRGBA node that can specify color values applied to corresponding vertices according to colorIndex and colorPerVertex fields.",
+          "childNodes": [
+            "Color"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "coord",
+          "type": "SFNode",
+          "access": "exposedField",
+          "default": "NULL",
+          "doc": "Optional single contained Coordinate or CoordinateDouble node that can specify a list of vertex values.",
+          "childNodes": [
+            "Coordinate"
+          ],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "PositionInterpolator",
+      "component": "Interpolation",
+      "level": 1,
+      "summary": "PositionInterpolator generates a series of 3-tuple SFVec3f values.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/interpolators.html#PositionInterpolator",
+      "fields": [
+        {
+          "name": "set_fraction",
+          "type": "SFFloat",
+          "access": "eventIn",
+          "default": "",
+          "doc": "set_fraction selects input key for corresponding keyValue output.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "key",
+          "type": "MFFloat",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Definition values for linear-interpolation function input intervals, listed in non-decreasing order and corresponding to a value in the keyValue array.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "keyValue",
+          "type": "MFVec3f",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Output values for linear interpolation, each corresponding to an input-fraction value in the key array.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "value_changed",
+          "type": "SFVec3f",
+          "access": "eventOut",
+          "default": "",
+          "doc": "Linearly interpolated output value determined by current key time and corresponding keyValue pair.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "ProximitySensor",
+      "component": "EnvironmentalSensor",
+      "level": 1,
+      "summary": "ProximitySensor generates events when the viewer enters, exits and moves within a region of space (defined by a box).",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/environmentalSensor.html#ProximitySensor",
+      "fields": [
+        {
+          "name": "center",
+          "type": "SFVec3f",
+          "access": "exposedField",
+          "default": "0 0 0",
+          "doc": "Position offset from origin of local coordinate system.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "size",
+          "type": "SFVec3f",
+          "access": "exposedField",
+          "default": "0 0 0",
+          "doc": "size of Proximity box around center location, oriented within local transformation frame.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "enabled",
+          "type": "SFBool",
+          "access": "exposedField",
+          "default": "true",
+          "doc": "Enables/disables node operation.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "isActive",
+          "type": "SFBool",
+          "access": "eventOut",
+          "default": "",
+          "doc": "isActive true/false events are sent as viewer enters/exits Proximity box.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "position_changed",
+          "type": "SFVec3f",
+          "access": "eventOut",
+          "default": "",
+          "doc": "Sends translation event relative to center.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "orientation_changed",
+          "type": "SFRotation",
+          "access": "eventOut",
+          "default": "",
+          "doc": "Sends rotation event relative to center.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "centerOfRotation_changed",
+          "type": "SFVec3f",
+          "access": "eventOut",
+          "default": "",
+          "doc": "Sends changed centerOfRotation values, likely caused by user interaction.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "enterTime",
+          "type": "SFTime",
+          "access": "eventOut",
+          "default": "",
+          "doc": "Time event generated when user's camera enters the box.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "exitTime",
+          "type": "SFTime",
+          "access": "eventOut",
+          "default": "",
+          "doc": "Time event generated when user's camera exits the box.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "ScalarInterpolator",
+      "component": "Interpolation",
+      "level": 1,
+      "summary": "ScalarInterpolator generates piecewise-linear SFFloat values.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/interpolators.html#ScalarInterpolator",
+      "fields": [
+        {
+          "name": "set_fraction",
+          "type": "SFFloat",
+          "access": "eventIn",
+          "default": "",
+          "doc": "set_fraction selects input key for corresponding keyValue output.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "key",
+          "type": "MFFloat",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Definition values for linear-interpolation function input intervals, listed in non-decreasing order and corresponding to a value in the keyValue array.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "keyValue",
+          "type": "MFFloat",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Output values for linear interpolation, each corresponding to an input-fraction value in the key array.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "value_changed",
+          "type": "SFFloat",
+          "access": "eventOut",
+          "default": "",
+          "doc": "Linearly interpolated output value determined by current key time and corresponding keyValue pair.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "Script",
+      "component": "Scripting",
+      "level": 1,
+      "summary": "Script contains author-programmed event behaviors for a scene.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/scripting.html#Script",
+      "fields": [
+        {
+          "name": "url",
+          "type": "MFString",
+          "access": "exposedField",
+          "default": "",
+          "doc": "List of address links for runnable script files.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "mustEvaluate",
+          "type": "SFBool",
+          "access": "field",
+          "default": "false",
+          "doc": "If mustEvaluate false, then the X3D player may delay sending input events to Script until output events are needed.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "directOutput",
+          "type": "SFBool",
+          "access": "field",
+          "default": "false",
+          "doc": "Set directOutput true if Script has field reference(s) of type SFNode/MFNode, and also uses direct access to modify attributes of a referenced node in the Scene.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "Shape",
+      "component": "Shape",
+      "level": 1,
+      "summary": "Shape can appear under any grouping node.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/shape.html#Shape",
+      "fields": [
+        {
+          "name": "appearance",
+          "type": "SFNode",
+          "access": "exposedField",
+          "default": "NULL",
+          "doc": "Optional single contained Appearance node that can specify visual attributes (such as material, texture, fillProperties and lineProperties) applied to corresponding geometry.",
+          "childNodes": [
+            "Appearance"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "geometry",
+          "type": "SFNode",
+          "access": "exposedField",
+          "default": "NULL",
+          "doc": "Optional single contained geometry node that is rendered according to corresponding appearance.",
+          "childNodes": [
+            "Box",
+            "Cone",
+            "Cylinder",
+            "ElevationGrid",
+            "Extrusion",
+            "IndexedFaceSet",
+            "IndexedLineSet",
+            "LineSet",
+            "PointSet",
+            "Sphere",
+            "Text"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "bboxCenter",
+          "type": "SFVec3f",
+          "access": "field",
+          "default": "0 0 0",
+          "doc": "Bounding box center accompanies bboxSize and provides an optional hint for bounding box position offset from origin of local coordinate system.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "bboxSize",
+          "type": "SFVec3f",
+          "access": "field",
+          "default": "-1 -1 -1",
+          "doc": "Bounding box size is usually omitted, and can easily be calculated automatically by an X3D player at scene-loading time with minimal computational cost.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "bboxDisplay",
+          "type": "SFBool",
+          "access": "field",
+          "default": "false",
+          "doc": "Whether to display bounding box for associated geometry, aligned with world coordinates.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "visible",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "Whether or not renderable content within this node is visually displayed.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "castShadow",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "castShadow defines whether this Shape casts shadows as produced by lighting nodes.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "Sound",
+      "component": "Sound",
+      "level": 1,
+      "summary": "The Sound node controls the 3D spatialization of sound playback by a child AudioClip or MovieTexture node.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/sound.html#Sound",
+      "fields": [
+        {
+          "name": "direction",
+          "type": "SFVec3f",
+          "access": "exposedField",
+          "default": "0 0 1",
+          "doc": "direction of sound axis, relative to local coordinate system.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "intensity",
+          "type": "SFFloat",
+          "access": "exposedField",
+          "default": "1",
+          "doc": "Factor [0,1] adjusting loudness (decibels) of emitted sound.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "location",
+          "type": "SFVec3f",
+          "access": "exposedField",
+          "default": "0 0 0",
+          "doc": "Position of sound ellipsoid center, relative to local coordinate system.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "maxBack",
+          "type": "SFFloat",
+          "access": "exposedField",
+          "default": "10",
+          "doc": "Outer (zero loudness)ellipsoid distance along back direction.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "minBack",
+          "type": "SFFloat",
+          "access": "exposedField",
+          "default": "1",
+          "doc": "Inner (full loudness) ellipsoid distance along back direction.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "maxFront",
+          "type": "SFFloat",
+          "access": "exposedField",
+          "default": "10",
+          "doc": "Outer (zero loudness)ellipsoid distance along front direction.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "minFront",
+          "type": "SFFloat",
+          "access": "exposedField",
+          "default": "1",
+          "doc": "Inner (full loudness) ellipsoid distance along front direction.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "priority",
+          "type": "SFFloat",
+          "access": "exposedField",
+          "default": "0",
+          "doc": "Player hint [0,1] if needed to choose which sounds to play.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "source",
+          "type": "SFNode",
+          "access": "exposedField",
+          "default": "NULL",
+          "doc": "sound source for the Sound node, either an AudioClip node or a MovieTexture node.",
+          "childNodes": [
+            "AudioClip",
+            "MovieTexture"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "spatialize",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "Whether to spatialize sound playback relative to viewer.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "Sphere",
+      "component": "Geometry",
+      "level": 1,
+      "summary": "Sphere is a geometry node, representing a perfectly round geometrical object that is the surface of a completely round ball.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/geometry3D.html#Sphere",
+      "fields": [
+        {
+          "name": "radius",
+          "type": "SFFloat",
+          "access": "field",
+          "default": "1",
+          "doc": "Size in meters.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "solid",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off).",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "SphereSensor",
+      "component": "PointingDeviceSensor",
+      "level": 1,
+      "summary": "SphereSensor converts pointing device motion into a spherical rotation about the origin of the local coordinate system.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/pointingDeviceSensor.html#SphereSensor",
+      "fields": [
+        {
+          "name": "enabled",
+          "type": "SFBool",
+          "access": "exposedField",
+          "default": "true",
+          "doc": "Enables/disables node operation.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "autoOffset",
+          "type": "SFBool",
+          "access": "exposedField",
+          "default": "true",
+          "doc": "Determines whether previous offset values are remembered/accumulated.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "trackPoint_changed",
+          "type": "SFVec3f",
+          "access": "eventOut",
+          "default": "",
+          "doc": "trackPoint_changed events give intersection point of bearing with sensor's virtual geometry.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "isActive",
+          "type": "SFBool",
+          "access": "eventOut",
+          "default": "",
+          "doc": "Select geometry by activating the pointing device (for example, clicking the mouse) to generate isActive events.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "isOver",
+          "type": "SFBool",
+          "access": "eventOut",
+          "default": "",
+          "doc": "Hover over geometry by aiming the mouse (or pointing device) to generate isOver events.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "rotation_changed",
+          "type": "SFRotation",
+          "access": "eventOut",
+          "default": "",
+          "doc": "rotation_changed events equal sum of relative bearing changes plus offset value.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "offset",
+          "type": "SFRotation",
+          "access": "exposedField",
+          "default": "0 1 0 0",
+          "doc": "Sends event and remembers last value sensed.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "description",
+          "type": "SFString",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Author-provided prose that describes intended purpose of this node.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "SpotLight",
+      "component": "Lighting",
+      "level": 1,
+      "summary": "Linear attenuation may occur at level 2, full support at level 3.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/lighting.html#SpotLight",
+      "fields": [
+        {
+          "name": "ambientIntensity",
+          "type": "SFFloat",
+          "access": "exposedField",
+          "default": "0",
+          "doc": "Brightness of ambient (nondirectional background) emission from the light.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "color",
+          "type": "SFColor",
+          "access": "exposedField",
+          "default": "1 1 1",
+          "doc": "color of light, applied to colors of objects.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "intensity",
+          "type": "SFFloat",
+          "access": "exposedField",
+          "default": "1",
+          "doc": "Brightness of direct emission from the light.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "on",
+          "type": "SFBool",
+          "access": "exposedField",
+          "default": "true",
+          "doc": "Enables/disables this light source.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "global",
+          "type": "SFBool",
+          "access": "exposedField",
+          "default": "true",
+          "doc": "Global lights illuminate all objects within their volume of lighting influence.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "attenuation",
+          "type": "SFVec3f",
+          "access": "exposedField",
+          "default": "1 0 0",
+          "doc": "Constant, linear-distance and squared-distance dropoff factors as radial distance increases from the source.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "beamWidth",
+          "type": "SFFloat",
+          "access": "exposedField",
+          "default": "0.589049",
+          "doc": "Inner conical solid angle (in radians) where light source has uniform full intensity.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "cutOffAngle",
+          "type": "SFFloat",
+          "access": "exposedField",
+          "default": "1.570796",
+          "doc": "Outer conical solid angle (in radians) where light source intensity becomes zero.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "direction",
+          "type": "SFVec3f",
+          "access": "exposedField",
+          "default": "0 0 -1",
+          "doc": "Orientation vector of light relative to local coordinate system.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "location",
+          "type": "SFVec3f",
+          "access": "exposedField",
+          "default": "0 0 0",
+          "doc": "Position of light relative to local coordinate system.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "radius",
+          "type": "SFFloat",
+          "access": "exposedField",
+          "default": "100",
+          "doc": "Maximum effective distance of light relative to local light position, affected by ancestor scaling.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "Switch",
+      "component": "Grouping",
+      "level": 1,
+      "summary": "Switch is a Grouping node that only renders one (or zero) child at a time.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/grouping.html#Switch",
+      "fields": [
+        {
+          "name": "children",
+          "type": "MFNode",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Grouping nodes contain an ordered list of children nodes.",
+          "childNodes": [
+            "Anchor",
+            "AudioClip",
+            "Background",
+            "Billboard",
+            "Box",
+            "Collision",
+            "ColorInterpolator",
+            "Cone",
+            "CoordinateInterpolator",
+            "Cylinder",
+            "CylinderSensor",
+            "DirectionalLight",
+            "ElevationGrid",
+            "Extrusion",
+            "Fog",
+            "Group",
+            "IndexedFaceSet",
+            "IndexedLineSet",
+            "Inline",
+            "LOD",
+            "LineSet",
+            "MovieTexture",
+            "NavigationInfo",
+            "NormalInterpolator",
+            "OrientationInterpolator",
+            "PlaneSensor",
+            "PointLight",
+            "PointSet",
+            "PositionInterpolator",
+            "ProximitySensor",
+            "ScalarInterpolator",
+            "Script",
+            "Shape",
+            "Sound",
+            "Sphere",
+            "SphereSensor",
+            "SpotLight",
+            "Switch",
+            "Text",
+            "TimeSensor",
+            "TouchSensor",
+            "Transform",
+            "Viewpoint",
+            "VisibilitySensor",
+            "WorldInfo"
+          ],
+          "aliases": [
+            "choice"
+          ]
+        },
+        {
+          "name": "addChildren",
+          "type": "MFNode",
+          "access": "eventIn",
+          "default": "",
+          "doc": "",
+          "childNodes": [
+            "Anchor",
+            "AudioClip",
+            "Background",
+            "Billboard",
+            "Box",
+            "Collision",
+            "ColorInterpolator",
+            "Cone",
+            "CoordinateInterpolator",
+            "Cylinder",
+            "CylinderSensor",
+            "DirectionalLight",
+            "ElevationGrid",
+            "Extrusion",
+            "Fog",
+            "Group",
+            "IndexedFaceSet",
+            "IndexedLineSet",
+            "Inline",
+            "LOD",
+            "LineSet",
+            "MovieTexture",
+            "NavigationInfo",
+            "NormalInterpolator",
+            "OrientationInterpolator",
+            "PlaneSensor",
+            "PointLight",
+            "PointSet",
+            "PositionInterpolator",
+            "ProximitySensor",
+            "ScalarInterpolator",
+            "Script",
+            "Shape",
+            "Sound",
+            "Sphere",
+            "SphereSensor",
+            "SpotLight",
+            "Switch",
+            "Text",
+            "TimeSensor",
+            "TouchSensor",
+            "Transform",
+            "Viewpoint",
+            "VisibilitySensor",
+            "WorldInfo"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "removeChildren",
+          "type": "MFNode",
+          "access": "eventIn",
+          "default": "",
+          "doc": "",
+          "childNodes": [
+            "Anchor",
+            "AudioClip",
+            "Background",
+            "Billboard",
+            "Box",
+            "Collision",
+            "ColorInterpolator",
+            "Cone",
+            "CoordinateInterpolator",
+            "Cylinder",
+            "CylinderSensor",
+            "DirectionalLight",
+            "ElevationGrid",
+            "Extrusion",
+            "Fog",
+            "Group",
+            "IndexedFaceSet",
+            "IndexedLineSet",
+            "Inline",
+            "LOD",
+            "LineSet",
+            "MovieTexture",
+            "NavigationInfo",
+            "NormalInterpolator",
+            "OrientationInterpolator",
+            "PlaneSensor",
+            "PointLight",
+            "PointSet",
+            "PositionInterpolator",
+            "ProximitySensor",
+            "ScalarInterpolator",
+            "Script",
+            "Shape",
+            "Sound",
+            "Sphere",
+            "SphereSensor",
+            "SpotLight",
+            "Switch",
+            "Text",
+            "TimeSensor",
+            "TouchSensor",
+            "Transform",
+            "Viewpoint",
+            "VisibilitySensor",
+            "WorldInfo"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "bboxCenter",
+          "type": "SFVec3f",
+          "access": "field",
+          "default": "0 0 0",
+          "doc": "Bounding box center accompanies bboxSize and provides an optional hint for bounding box position offset from origin of local coordinate system.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "bboxSize",
+          "type": "SFVec3f",
+          "access": "field",
+          "default": "-1 -1 -1",
+          "doc": "Bounding box size is usually omitted, and can easily be calculated automatically by an X3D player at scene-loading time with minimal computational cost.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "bboxDisplay",
+          "type": "SFBool",
+          "access": "field",
+          "default": "false",
+          "doc": "Whether to display bounding box for associated geometry, aligned with world coordinates.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "whichChoice",
+          "type": "SFInt32",
+          "access": "exposedField",
+          "default": "-1",
+          "doc": "Index of active child choice, counting from 0.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "Text",
+      "component": "Text",
+      "level": 1,
+      "summary": "Text is a 2D (flat) geometry node that can contain multiple lines of string values.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/text.html#Text",
+      "fields": [
+        {
+          "name": "string",
+          "type": "MFString",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Single or multiple string values to present as Text.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "fontStyle",
+          "type": "SFNode",
+          "access": "exposedField",
+          "default": "NULL",
+          "doc": "The fontStyle field can contain a FontStyle or ScreenFontStyle node defining size, family, and style for presented text.",
+          "childNodes": [
+            "FontStyle"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "length",
+          "type": "MFFloat",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Array of length values for each text string in the local coordinate system.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "maxExtent",
+          "type": "SFFloat",
+          "access": "exposedField",
+          "default": "0.0",
+          "doc": "Limits/compresses all text strings if max string length is longer than maxExtent, as measured in local coordinate system.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "solid",
+          "type": "SFBool",
+          "access": "field",
+          "default": "false",
+          "doc": "Setting solid true means draw only one side of polygons (backface culling on), setting solid false means draw both sides of polygons (backface culling off).",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "TextureCoordinate",
+      "component": "Texturing",
+      "level": 1,
+      "summary": "TextureCoordinate specifies 2D (s,t) texture-coordinate points, used by vertex-based geometry nodes (such as IndexedFaceSet or ElevationGrid) to map textures to vertices (and patches to NURBS surfaces).",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/texturing.html#TextureCoordinate",
+      "fields": [
+        {
+          "name": "point",
+          "type": "MFVec2f",
+          "access": "exposedField",
+          "default": "",
+          "doc": "pairs of 2D (s,t) texture coordinates, either in range [0,1] or higher if repeating.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "TextureTransform",
+      "component": "Texturing",
+      "level": 1,
+      "summary": "TextureTransform shifts 2D texture coordinates for positioning, orienting and scaling image textures on geometry.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/texturing.html#TextureTransform",
+      "fields": [
+        {
+          "name": "center",
+          "type": "SFVec2f",
+          "access": "exposedField",
+          "default": "0 0",
+          "doc": "center point in 2D (s,t) texture coordinates for rotation and scaling.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "rotation",
+          "type": "SFFloat",
+          "access": "exposedField",
+          "default": "0",
+          "doc": "Single rotation angle of texture about center (opposite effect appears on geometry).",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "scale",
+          "type": "SFVec2f",
+          "access": "exposedField",
+          "default": "1 1",
+          "doc": "Non-uniform planar scaling of texture about center (opposite effect appears on geometry).",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "translation",
+          "type": "SFVec2f",
+          "access": "exposedField",
+          "default": "0 0",
+          "doc": "Lateral/vertical shift in 2D (s,t) texture coordinates (opposite effect appears on geometry).",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "TimeSensor",
+      "component": "Time",
+      "level": 1,
+      "summary": "TimeSensor continuously generates events as time passes.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/time.html#TimeSensor",
+      "fields": [
+        {
+          "name": "loop",
+          "type": "SFBool",
+          "access": "exposedField",
+          "default": "false",
+          "doc": "Repeat indefinitely when loop=true, repeat only once when loop=false.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "startTime",
+          "type": "SFTime",
+          "access": "exposedField",
+          "default": "0",
+          "doc": "When time now >= startTime, isActive becomes true and TimeSensor becomes active.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "stopTime",
+          "type": "SFTime",
+          "access": "exposedField",
+          "default": "0",
+          "doc": "When stopTime becomes <= time now, isActive becomes false and TimeSensor becomes inactive.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "pauseTime",
+          "type": "SFTime",
+          "access": "exposedField",
+          "default": "0",
+          "doc": "When time now >= pauseTime, isPaused becomes true and TimeSensor becomes paused.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "elapsedTime",
+          "type": "SFTime",
+          "access": "eventOut",
+          "default": "",
+          "doc": "Current elapsed time since TimeSensor activated/running, cumulative in seconds, and not counting any paused time.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "resumeTime",
+          "type": "SFTime",
+          "access": "exposedField",
+          "default": "0",
+          "doc": "When resumeTime becomes <= time now, isPaused becomes false and TimeSensor becomes inactive.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "time",
+          "type": "SFTime",
+          "access": "eventOut",
+          "default": "",
+          "doc": "Time continuously sends the absolute time (value 0.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "cycleTime",
+          "type": "SFTime",
+          "access": "eventOut",
+          "default": "",
+          "doc": "cycleTime sends a time outputOnly at startTime, and also at the beginning of each new cycle (useful for synchronization with other time-based objects).",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "cycleInterval",
+          "type": "SFTime",
+          "access": "exposedField",
+          "default": "1.0",
+          "doc": "cycleInterval is loop duration in seconds.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "isActive",
+          "type": "SFBool",
+          "access": "eventOut",
+          "default": "",
+          "doc": "isActive true/false events are sent when TimeSensor starts/stops running.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "isPaused",
+          "type": "SFBool",
+          "access": "eventOut",
+          "default": "",
+          "doc": "isPaused true/false events are sent when TimeSensor is paused/resumed.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "enabled",
+          "type": "SFBool",
+          "access": "exposedField",
+          "default": "true",
+          "doc": "Enables/disables node operation.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "fraction_changed",
+          "type": "SFFloat",
+          "access": "eventOut",
+          "default": "",
+          "doc": "fraction_changed continuously sends value in range [0,1] showing time progress in the current cycle.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "TouchSensor",
+      "component": "PointingDeviceSensor",
+      "level": 1,
+      "summary": "TouchSensor tracks location and state of the pointing device, detecting when a user points at or selects (activates) geometry.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/pointingDeviceSensor.html#TouchSensor",
+      "fields": [
+        {
+          "name": "enabled",
+          "type": "SFBool",
+          "access": "exposedField",
+          "default": "true",
+          "doc": "Enables/disables node operation.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "description",
+          "type": "SFString",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Author-provided prose that describes intended purpose of this node.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "hitNormal_changed",
+          "type": "SFVec3f",
+          "access": "eventOut",
+          "default": "",
+          "doc": "When pointing device selects geometry, send event containing surface normal vector at the hitPoint.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "hitPoint_changed",
+          "type": "SFVec3f",
+          "access": "eventOut",
+          "default": "",
+          "doc": "When pointing device selects geometry, send event containing 3D point on surface of underlying geometry, as measured in reference frame for TouchSensor's local coordinate system.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "hitTexCoord_changed",
+          "type": "SFVec2f",
+          "access": "eventOut",
+          "default": "",
+          "doc": "When pointing device selects geometry, send event containing texture coordinates of surface at the hitPoint.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "isActive",
+          "type": "SFBool",
+          "access": "eventOut",
+          "default": "",
+          "doc": "Select geometry by activating the pointing device (for example, clicking the mouse) to generate isActive events.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "isOver",
+          "type": "SFBool",
+          "access": "eventOut",
+          "default": "",
+          "doc": "Hover over geometry by aiming the mouse (or pointing device) to generate isOver events.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "touchTime",
+          "type": "SFTime",
+          "access": "eventOut",
+          "default": "",
+          "doc": "Time event generated when sensor is touched by pointing device, and then deselected by the user.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "Transform",
+      "component": "Grouping",
+      "level": 1,
+      "summary": "Transform is a Grouping node that can contain most nodes.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/grouping.html#Transform",
+      "fields": [
+        {
+          "name": "children",
+          "type": "MFNode",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Grouping nodes contain an ordered list of children nodes.",
+          "childNodes": [
+            "Anchor",
+            "AudioClip",
+            "Background",
+            "Billboard",
+            "Box",
+            "Collision",
+            "ColorInterpolator",
+            "Cone",
+            "CoordinateInterpolator",
+            "Cylinder",
+            "CylinderSensor",
+            "DirectionalLight",
+            "ElevationGrid",
+            "Extrusion",
+            "Fog",
+            "Group",
+            "IndexedFaceSet",
+            "IndexedLineSet",
+            "Inline",
+            "LOD",
+            "LineSet",
+            "MovieTexture",
+            "NavigationInfo",
+            "NormalInterpolator",
+            "OrientationInterpolator",
+            "PlaneSensor",
+            "PointLight",
+            "PointSet",
+            "PositionInterpolator",
+            "ProximitySensor",
+            "ScalarInterpolator",
+            "Script",
+            "Shape",
+            "Sound",
+            "Sphere",
+            "SphereSensor",
+            "SpotLight",
+            "Switch",
+            "Text",
+            "TimeSensor",
+            "TouchSensor",
+            "Transform",
+            "Viewpoint",
+            "VisibilitySensor",
+            "WorldInfo"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "addChildren",
+          "type": "MFNode",
+          "access": "eventIn",
+          "default": "",
+          "doc": "",
+          "childNodes": [
+            "Anchor",
+            "AudioClip",
+            "Background",
+            "Billboard",
+            "Box",
+            "Collision",
+            "ColorInterpolator",
+            "Cone",
+            "CoordinateInterpolator",
+            "Cylinder",
+            "CylinderSensor",
+            "DirectionalLight",
+            "ElevationGrid",
+            "Extrusion",
+            "Fog",
+            "Group",
+            "IndexedFaceSet",
+            "IndexedLineSet",
+            "Inline",
+            "LOD",
+            "LineSet",
+            "MovieTexture",
+            "NavigationInfo",
+            "NormalInterpolator",
+            "OrientationInterpolator",
+            "PlaneSensor",
+            "PointLight",
+            "PointSet",
+            "PositionInterpolator",
+            "ProximitySensor",
+            "ScalarInterpolator",
+            "Script",
+            "Shape",
+            "Sound",
+            "Sphere",
+            "SphereSensor",
+            "SpotLight",
+            "Switch",
+            "Text",
+            "TimeSensor",
+            "TouchSensor",
+            "Transform",
+            "Viewpoint",
+            "VisibilitySensor",
+            "WorldInfo"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "removeChildren",
+          "type": "MFNode",
+          "access": "eventIn",
+          "default": "",
+          "doc": "",
+          "childNodes": [
+            "Anchor",
+            "AudioClip",
+            "Background",
+            "Billboard",
+            "Box",
+            "Collision",
+            "ColorInterpolator",
+            "Cone",
+            "CoordinateInterpolator",
+            "Cylinder",
+            "CylinderSensor",
+            "DirectionalLight",
+            "ElevationGrid",
+            "Extrusion",
+            "Fog",
+            "Group",
+            "IndexedFaceSet",
+            "IndexedLineSet",
+            "Inline",
+            "LOD",
+            "LineSet",
+            "MovieTexture",
+            "NavigationInfo",
+            "NormalInterpolator",
+            "OrientationInterpolator",
+            "PlaneSensor",
+            "PointLight",
+            "PointSet",
+            "PositionInterpolator",
+            "ProximitySensor",
+            "ScalarInterpolator",
+            "Script",
+            "Shape",
+            "Sound",
+            "Sphere",
+            "SphereSensor",
+            "SpotLight",
+            "Switch",
+            "Text",
+            "TimeSensor",
+            "TouchSensor",
+            "Transform",
+            "Viewpoint",
+            "VisibilitySensor",
+            "WorldInfo"
+          ],
+          "aliases": []
+        },
+        {
+          "name": "bboxCenter",
+          "type": "SFVec3f",
+          "access": "field",
+          "default": "0 0 0",
+          "doc": "Bounding box center accompanies bboxSize and provides an optional hint for bounding box position offset from origin of local coordinate system.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "bboxSize",
+          "type": "SFVec3f",
+          "access": "field",
+          "default": "-1 -1 -1",
+          "doc": "Bounding box size is usually omitted, and can easily be calculated automatically by an X3D player at scene-loading time with minimal computational cost.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "bboxDisplay",
+          "type": "SFBool",
+          "access": "field",
+          "default": "false",
+          "doc": "Whether to display bounding box for associated geometry, aligned with world coordinates.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "visible",
+          "type": "SFBool",
+          "access": "field",
+          "default": "true",
+          "doc": "Whether or not renderable content within this node is visually displayed.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "center",
+          "type": "SFVec3f",
+          "access": "exposedField",
+          "default": "0 0 0",
+          "doc": "Translation offset from origin of local coordinate system, applied prior to rotation or scaling.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "rotation",
+          "type": "SFRotation",
+          "access": "exposedField",
+          "default": "0 0 1 0",
+          "doc": "Orientation (axis, angle in radians) of children relative to local coordinate system.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "scale",
+          "type": "SFVec3f",
+          "access": "exposedField",
+          "default": "1 1 1",
+          "doc": "Non-uniform x-y-z scale of child coordinate system, adjusted by center and scaleOrientation.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "scaleOrientation",
+          "type": "SFRotation",
+          "access": "exposedField",
+          "default": "0 0 1 0",
+          "doc": "Preliminary rotation of coordinate system before scaling (to allow scaling around arbitrary orientations).",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "translation",
+          "type": "SFVec3f",
+          "access": "exposedField",
+          "default": "0 0 0",
+          "doc": "Position (x, y, z in meters) of children relative to local coordinate system.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "Viewpoint",
+      "component": "Navigation",
+      "level": 1,
+      "summary": "Viewpoint provides a specific location and direction where the user may view the scene.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/navigation.html#Viewpoint",
+      "fields": [
+        {
+          "name": "set_bind",
+          "type": "SFBool",
+          "access": "eventIn",
+          "default": "",
+          "doc": "Sending event set_bind=true makes this node active.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "bindTime",
+          "type": "SFTime",
+          "access": "eventOut",
+          "default": "",
+          "doc": "Event sent reporting timestamp when node becomes active/inactive.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "isBound",
+          "type": "SFBool",
+          "access": "eventOut",
+          "default": "",
+          "doc": "Output event true gets sent when node becomes bound and activated, otherwise output event false gets sent when node becomes unbound and deactivated.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "fieldOfView",
+          "type": "SFFloat",
+          "access": "exposedField",
+          "default": "0.7854",
+          "doc": "Preferred minimum viewing angle from this viewpoint in radians, providing minimum height or minimum width (whichever is smaller).",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "jump",
+          "type": "SFBool",
+          "access": "exposedField",
+          "default": "true",
+          "doc": "Transition instantly by jumping, otherwise smoothly adjust offsets in place when changing to this Viewpoint.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "retainUserOffsets",
+          "type": "SFBool",
+          "access": "exposedField",
+          "default": "false",
+          "doc": "Retain (true) or reset to zero (false) any prior user navigation offsets from defined viewpoint position, orientation.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "viewAll",
+          "type": "SFBool",
+          "access": "exposedField",
+          "default": "false",
+          "doc": "Viewpoint is automatically adjusted to view all visible geometry.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "orientation",
+          "type": "SFRotation",
+          "access": "exposedField",
+          "default": "0 0 1 0",
+          "doc": "Rotation (axis, angle in radians) of Viewpoint, relative to default -Z axis direction in local coordinate system.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "position",
+          "type": "SFVec3f",
+          "access": "exposedField",
+          "default": "0 0 10",
+          "doc": "position (x, y, z in meters) relative to local coordinate system.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "centerOfRotation",
+          "type": "SFVec3f",
+          "access": "exposedField",
+          "default": "0 0 0",
+          "doc": "centerOfRotation specifies center point about which to rotate user's eyepoint when in EXAMINE or LOOKAT mode.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "description",
+          "type": "SFString",
+          "access": "exposedField",
+          "default": "",
+          "doc": "Text description or navigation hint to describe the significance of this model Viewpoint.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "farDistance",
+          "type": "SFFloat",
+          "access": "exposedField",
+          "default": "-1",
+          "doc": "farDistance defines maximum clipping plane distance allowed for object display.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "nearDistance",
+          "type": "SFFloat",
+          "access": "exposedField",
+          "default": "-1",
+          "doc": "nearDistance defines minimum clipping plane distance necessary for object display.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "VisibilitySensor",
+      "component": "EnvironmentalSensor",
+      "level": 1,
+      "summary": "VisibilitySensor detects when user can see a specific object or region as they navigate the world.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/environmentalSensor.html#VisibilitySensor",
+      "fields": [
+        {
+          "name": "center",
+          "type": "SFVec3f",
+          "access": "exposedField",
+          "default": "0 0 0",
+          "doc": "Translation offset from origin of local coordinate system.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "size",
+          "type": "SFVec3f",
+          "access": "exposedField",
+          "default": "0 0 0",
+          "doc": "size of visibility box around center location, oriented within local transformation frame.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "enabled",
+          "type": "SFBool",
+          "access": "exposedField",
+          "default": "true",
+          "doc": "Enables/disables node operation.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "isActive",
+          "type": "SFBool",
+          "access": "eventOut",
+          "default": "",
+          "doc": "isActive true/false events are sent when triggering the sensor.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "enterTime",
+          "type": "SFTime",
+          "access": "eventOut",
+          "default": "",
+          "doc": "Time event generated when user's camera enters visibility region for sensor.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "exitTime",
+          "type": "SFTime",
+          "access": "eventOut",
+          "default": "",
+          "doc": "Time event generated when user's camera exits visibility region for sensor.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "WorldInfo",
+      "component": "Core",
+      "level": 1,
+      "summary": "WorldInfo contains a title and simple persistent metadata information about an X3D scene. This node is strictly for documentation purposes and has no effect on the visual appearance or behaviour of the world.",
+      "specUrl": "https://www.web3d.org/specifications/X3Dv4Draft/ISO-IEC19775-1v4.1-CD/Part01/components/core.html#WorldInfo",
+      "fields": [
+        {
+          "name": "info",
+          "type": "MFString",
+          "access": "field",
+          "default": "",
+          "doc": "Additional information about this model.",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "title",
+          "type": "SFString",
+          "access": "field",
+          "default": "",
+          "doc": "title of this world, placed in window title.",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    },
+    {
+      "name": "WorldRoot",
+      "component": "Core",
+      "level": 1,
+      "summary": "",
+      "specUrl": "",
+      "fields": [
+        {
+          "name": "bboxSize",
+          "type": "SFVec3f",
+          "access": "field",
+          "default": "",
+          "doc": "",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "bboxCenter",
+          "type": "SFVec3f",
+          "access": "exposedField",
+          "default": "",
+          "doc": "",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "bboxDisplay",
+          "type": "SFBool",
+          "access": "field",
+          "default": "",
+          "doc": "",
+          "childNodes": [],
+          "aliases": []
+        },
+        {
+          "name": "children",
+          "type": "MFNode",
+          "access": "exposedField",
+          "default": "",
+          "doc": "",
+          "childNodes": [],
+          "aliases": []
+        }
+      ]
+    }
+  ]
+}

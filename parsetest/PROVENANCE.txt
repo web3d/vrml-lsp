@@ -1,0 +1,37 @@
+Vendored copy of the Xj3D parse-test corpus.
+
+What this is
+  263 .wrl files, 7019695 bytes, copied verbatim - no reflow, no re-encoding, no renames.
+  They are the regression corpus: byte-exact round-trip, the diagnostic baseline and golden
+  files, the formatter's idempotence pass and the large-scene performance budgets all read
+  nothing else.
+
+Where it came from
+  <workspace>/xj3d/parsetest  (Xj3D's own parse tests), taken 2026-09-06.
+  Only .wrl: the tests and the spec generator walk that extension and nothing else, so the
+  upstream directory's 1029 files (360 .x3dv, 205 .java, 77 .x3d, textures, audio) came over
+  as its 263 scenes, and the subdirectories that hold only those other files were not created.
+  Digest of the copy, as `find . -name '*.wrl' | sort | xargs sha256sum | sha256sum`:
+  42e7e39d26d13a7c...  Verify against a live checkout with:
+
+    diff <(cd ../../xj3d/parsetest        && find . -name '*.wrl' -exec sha256sum {} + | sort) \
+         <(cd vrml-lsp/parsetest && find . -name '*.wrl' -exec sha256sum {} + | sort)
+
+Why it is here
+  `mvn test` must work from this directory alone. The sibling checkout is not part of the
+  project and is not guaranteed to exist on another machine.
+
+Refreshing
+  Re-run the copy the same way, then verify before committing:
+
+    mkdir -p parsetest && (cd ../../xj3d/parsetest && find . -name '*.wrl' -print0 \
+        | tar --null -cf - --no-recursion -T -) | tar -xf - -C parsetest
+
+  Expect the corpus tests to change counts, not to fail silently: the round-trip and reflow
+  tests print how many files they saw. Any new or edited scene also moves the diagnostic
+  baseline, which is regenerated deliberately (see src/test/resources/corpus/).
+
+Do not
+  Edit these files to make a test pass. They are somebody else's scenes and the point of them
+  is that nobody here has a stake in the outcome. Reproduce against the real Xj3D corpus with
+  -Dparsetest.dir=../xj3d/parsetest if in doubt.
