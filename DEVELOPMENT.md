@@ -305,10 +305,9 @@ p95 达标（5 MB 4.7 ms）而 **max 冲到 211 ms** —— 编辑落在后台�
 |---|---|
 | M3 字段名冲突清单（`wrapS`/`wrapT` 一类） | **待人工签核**：保留还是删表 |
 | M6 实现偏离（不做 statement 级复用，改按文本身份缓存 + 独立 `analysisLock`） | **待签核**；判据已达标，路径与 plan 不同 |
-| 命名（`vrml-lsp/`、`org.vrml:vrml-lsp`、`org.vrml.lsp.Launcher`） | 保持现状；仓库仅 3 条提交，改的成本还很低 |
-| `Launcher.VERSION` `0.1.0` 与 Maven `0.1.0-SNAPSHOT` 未联动 | 已知噪声 |
+| 命名（`vrml-lsp/`、`org.vrml:vrml-lsp`、`org.vrml.lsp.Launcher`） | 保持现状；历史还短，改的成本还很低 |
 | 内存余量（`List<Token>` → 并行数组、`sigOf` 去装箱） | 未做 |
-| git 历史只有 3 条（初始导入式），过程细节不在提交里 | 后续按里程碑小步提交；本文即为此而写 |
+| git 历史是初始导入式的几条提交，过程细节不在提交里 | 后续按里程碑小步提交；本文即为此而写 |
 
 ## 本文的事实来源
 

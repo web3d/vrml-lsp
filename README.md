@@ -10,7 +10,7 @@ Java 17 + Maven + LSP4J 0.24.0 的 **stdio 单 jar** 语言服务器，只支持
 | 构建 | `mvn -B -o package` → `target/vrml-lsp.jar`（约 1.3 MB） |
 | 测试 | `mvn -B -o clean test` → **293 例**，不需要项目外任何东西（语料随项目走） |
 | 能力 | 诊断（push）、补全、hover、documentSymbol、definition/declaration/references、格式化 + 区域格式化 |
-| 远端 | `git@gitee.com:web3d/vrml-lsp.git`（独立仓库，与同工作区的 `Xj3D/`、`xj3d/` 检出无关） |
+| 远端 | `origin` → `git@gitee.com:web3d/vrml-lsp.git`；`github` → `git@github.com:web3d/vrml-lsp.git`（独立仓库，与同工作区的 `Xj3D/`、`xj3d/` 检出无关） |
 
 ## 快速开始
 
@@ -253,8 +253,7 @@ vrml-lsp/
 2. **M6 的实现偏离**（上一节）：不做 statement 级复用。**待签核。**
 3. 命名：目录 `vrml-lsp/`、坐标 `org.vrml:vrml-lsp`、主类 `org.vrml.lsp.Launcher` —— plan 问是否换成
    你的偏好，目前按现状；仓库刚建，改的成本还很低。
-4. 小噪声：`Launcher.VERSION` 是 `0.1.0` 而 Maven 版本是 `0.1.0-SNAPSHOT`，两者没联动。
-5. 内存余量：`List<Token>` → 并行数组、`sigOf` 去装箱（见性能一节）。
-6. `EXTERNPROTO` 的 URI 补全只看**同目录**的 `.wrl` / `.wrl.gz`（`CompletionEncoder.siblingScenes`，
+4. 内存余量：`List<Token>` → 并行数组、`sigOf` 去装箱（见性能一节）。
+5. `EXTERNPROTO` 的 URI 补全只看**同目录**的 `.wrl` / `.wrl.gz`（`CompletionEncoder.siblingScenes`，
    有 `MAX_URIS` 上限、读盘失败就当没候选）：跳目录的 import 与 `.wrz` 不给候选，
    也没有 workspace 级文件索引（plan 里的「全量重建」本来就在不做之列）。
